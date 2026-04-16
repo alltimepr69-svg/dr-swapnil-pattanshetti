@@ -2335,34 +2335,63 @@
     }
 
     @media (max-width: 768px) {
-      #v2-hero { padding: 84px 5% 48px; min-height: auto; }
-      .v2-hero-h1 { font-size: clamp(2.4rem, 10vw, 3.2rem); }
-      .v2-hero-photo-wrap { max-width: 300px; }
-      .v2-float-opd  { top: -4%; left: -6%; padding: 10px 14px; }
-      .v2-float-cred { bottom: 2%; right: -4%; padding: 10px 14px; }
+      #v2-hero { padding: 76px 5% 40px; min-height: auto; }
+      /* Mobile: image first, then content */
+      .v2-hero-grid { gap: 32px; }
+      .v2-hero-content { order: 2; text-align: center; }
+      .v2-hero-photo-wrap { order: 1; max-width: 260px; }
+      .v2-hero-eyebrow { margin-bottom: 18px; }
+      .v2-hero-h1 { font-size: clamp(2.2rem, 10vw, 3rem); margin-bottom: 14px; }
+      .v2-hero-name { justify-content: center; font-size: 0.92rem; }
+      .v2-hero-desc { font-size: 0.96rem; margin: 14px auto 26px; }
+
+      .v2-float-opd  { top: -4%; left: -6%; padding: 9px 13px; }
+      .v2-float-cred { bottom: 2%; right: -4%; padding: 9px 13px; }
       .v2-float-badge { width: 56px; height: 56px; right: -4%; font-size: 0.5rem; }
       .v2-float-badge span { font-size: 0.95rem; }
-      .v2-float-icon { width: 34px; height: 34px; }
+      .v2-float-icon { width: 32px; height: 32px; border-radius: 10px; }
       .v2-float-icon svg { width: 16px; height: 16px; }
-      .v2-float-val { font-size: 0.82rem; }
-      .v2-marquee-item { font-size: 1.15rem; gap: 32px; }
-      .v2-marquee-track { gap: 32px; }
-      #v2-philo { padding: 80px 5% 64px; }
-      .v2-philo-quote { padding: 36px 28px; }
-      .v2-philo-quote::before { font-size: 6rem; top: -10px; left: 18px; }
-      .v2-highlights { grid-template-columns: 1fr; margin-top: 48px; gap: 16px; }
-      #v2-why-peds, #v2-why-dr, #v2-edu { padding: 80px 5%; }
-      .v2-wp-row { grid-template-columns: 64px 1fr; gap: 16px; padding: 22px; }
-      .v2-wp-row:nth-child(even) { grid-template-columns: 64px 1fr; direction: ltr; }
+      .v2-float-val { font-size: 0.8rem; }
+      .v2-float-label { font-size: 0.58rem; }
+
+      /* Hide the moving languages/specialty marquee on mobile */
+      #v2-marquee { display: none; }
+
+      #v2-philo { padding: 72px 5% 56px; }
+      .v2-philo-quote { padding: 32px 24px; }
+      .v2-philo-quote::before { font-size: 5.5rem; top: -10px; left: 16px; }
+      .v2-highlights { grid-template-columns: 1fr; margin-top: 44px; gap: 14px; }
+      .v2-hl-card { padding: 26px 22px; }
+
+      #v2-why-peds, #v2-why-dr, #v2-edu { padding: 72px 5%; }
+      .v2-wp-head { margin-bottom: 40px; }
+      .v2-wp-row { grid-template-columns: 56px 1fr; gap: 14px; padding: 22px 20px; }
+      .v2-wp-row:nth-child(even) { grid-template-columns: 56px 1fr; direction: ltr; }
+      .v2-wp-row:hover { transform: none; }
       .v2-wp-shape { display: none; }
-      .v2-wp-num { font-size: 2.6rem; }
-      .v2-wd-grid { grid-template-columns: 1fr; }
-      .v2-edu-chain { grid-template-columns: 1fr; gap: 28px; }
-      .v2-edu-node-dot { width: 72px; height: 72px; font-size: 0.95rem; margin-bottom: 14px; }
-      .v2-cta-card { padding: 52px 28px; border-radius: 32px; }
-      .v2-btn-primary, .v2-btn-ghost { padding: 14px 24px; font-size: 0.92rem; width: 100%; justify-content: center; }
-      .v2-hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
-      .v2-hero-chips { justify-content: center; }
+      .v2-wp-num { font-size: 2.4rem; }
+      .v2-wp-body h3 { font-size: 1.1rem; }
+      .v2-wp-body p { font-size: 0.88rem; }
+
+      .v2-wd-grid { grid-template-columns: 1fr; gap: 14px; }
+      .v2-wd-card { padding: 24px 22px 26px; border-radius: 20px; }
+      .v2-edu-chain { grid-template-columns: 1fr; gap: 22px; }
+      .v2-edu-node-dot { width: 68px; height: 68px; font-size: 0.9rem; margin-bottom: 12px; }
+      .v2-edu-node-card { padding: 18px 18px; border-radius: 16px; }
+
+      .v2-cta-card { padding: 48px 24px; border-radius: 28px; }
+      .v2-btn-primary, .v2-btn-ghost { padding: 13px 22px; font-size: 0.92rem; width: 100%; justify-content: center; }
+      .v2-hero-actions { flex-direction: column; align-items: stretch; gap: 10px; margin-bottom: 28px; }
+      .v2-hero-chips { justify-content: center; border-top: none; padding-top: 8px; gap: 8px; }
+      .v2-hero-chip { font-size: 0.78rem; padding: 5px 12px 5px 5px; }
+      .v2-hero-chip .num { width: 24px; height: 24px; font-size: 0.78rem; }
+    }
+
+    @media (max-width: 420px) {
+      .v2-hero-photo-wrap { max-width: 220px; }
+      .v2-float-opd, .v2-float-cred { display: none; }
+      .v2-float-badge { width: 48px; height: 48px; font-size: 0.44rem; right: -2%; top: 50%; }
+      .v2-float-badge span { font-size: 0.8rem; }
     }
 
   </style>
