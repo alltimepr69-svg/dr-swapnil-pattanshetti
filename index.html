@@ -1,0 +1,3024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Swapnil A. Pattanshetti — Paediatric Surgeon & Urologist, Belagavi</title>
+  <meta name="description" content="Compassionate Paediatric Surgery & Urology care in Belagavi, Karnataka. Book an appointment with Dr. Swapnil A. Pattanshetti, MS, MCh (PGIMER), FPESI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <noscript>
+    <style>
+      /* Ensure content is visible if JavaScript is disabled */
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .page { display: block !important; }
+      #page-transition { display: none !important; }
+    </style>
+  </noscript>
+
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #6B46C1;           /* deep purple (primary) */
+      --navy-d: #553C9A;
+      --gold:   #F687B3;           /* playful pink accent */
+      --gold-d: #D53F8C;
+      --blue-s: #E9D8FD;           /* light lilac */
+      --bg:     #FAF5FF;           /* very soft purple-white */
+      --bg-2:   #F3E8FF;
+      --white:  #FFFFFF;
+      --text:   #2D3748;
+      --text-l: #6B5B95;
+      --radius: 20px;
+      --shadow: 0 4px 24px rgba(107,70,193,0.10);
+      --shadow-h: 0 12px 40px rgba(107,70,193,0.20);
+      --transition: 0.35s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { font-family: 'DM Sans', sans-serif; cursor: pointer; border: none; }
+    ul { list-style: none; }
+
+    /* ─── PAGE VISIBILITY ──────────────────────────────────────── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ─── NAVBAR ───────────────────────────────────────────────── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 5%;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(107,70,193,0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(107,70,193,0.25);
+    }
+    #navbar.light {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 16px rgba(107,70,193,0.10);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'DM Serif Display', serif;
+    }
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--gold) 0%, #D53F8C 100%);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-icon svg { width: 22px; height: 22px; fill: white; }
+    .nav-logo-text { line-height: 1.1; }
+    .nav-logo-name { font-size: 0.95rem; font-weight: 400; color: white; letter-spacing: 0.3px; }
+    .nav-logo-title { font-size: 0.7rem; font-family: 'DM Sans', sans-serif; color: var(--blue-s); font-weight: 300; letter-spacing: 1px; text-transform: uppercase; }
+    #navbar.light .nav-logo-name { color: var(--navy); }
+    #navbar.light .nav-logo-title { color: var(--text-l); }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-link {
+      padding: 8px 18px;
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.3px;
+      color: rgba(255,255,255,0.82);
+      border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+      cursor: pointer;
+    }
+    .nav-link:hover, .nav-link.active { color: white; background: rgba(255,255,255,0.12); }
+    #navbar.light .nav-link { color: var(--text-l); }
+    #navbar.light .nav-link:hover, #navbar.light .nav-link.active { color: var(--navy); background: var(--bg); }
+    .nav-cta {
+      padding: 9px 22px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+      box-shadow: 0 2px 12px rgba(246,135,179,0.35);
+    }
+    .nav-cta:hover { background: var(--gold-d); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(246,135,179,0.45) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--transition); }
+    #navbar.light .hamburger span { background: var(--navy); }
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
+      background: rgba(107,70,193,0.98); backdrop-filter: blur(16px);
+      flex-direction: column; padding: 16px 24px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu .nav-link { color: rgba(255,255,255,0.85); padding: 12px 0; border-radius: 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-menu .nav-cta { margin-top: 12px; text-align: center; display: block; background: var(--gold); border-radius: 50px; color: var(--navy) !important; }
+
+    /* ─── SECTION UTILITIES ────────────────────────────────────── */
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px;
+      background: rgba(246,135,179,0.12);
+      border: 1px solid rgba(246,135,179,0.3);
+      border-radius: 50px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--gold-d);
+      margin-bottom: 16px;
+    }
+    .section-tag::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+    .section-heading { font-size: clamp(1.9rem, 3.5vw, 2.8rem); color: var(--navy); margin-bottom: 12px; }
+    .section-sub { font-size: 1rem; color: var(--text-l); line-height: 1.7; max-width: 560px; }
+    .reveal { opacity: 0; transform: translateY(28px) scale(0.985); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+    .reveal-delay-5 { transition-delay: 0.40s; }
+    .reveal-delay-6 { transition-delay: 0.48s; }
+
+    /* Scroll progress bar beneath the navbar */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 1001;
+      height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--gold) 0%, #FBB6CE 50%, var(--gold) 100%);
+      box-shadow: 0 0 8px rgba(246,135,179,0.5);
+      transition: width 0.12s linear;
+      pointer-events: none;
+    }
+
+    /* Reduced motion: disable entrance animations / transitions for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /*  HOME PAGE                                                   */
+    /* ═══════════════════════════════════════════════════════════ */
+
+    /* ─── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #4C1D95 0%, #6B46C1 45%, #7C3AED 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: 72px;
+    }
+    .hero-bg-rings {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .hero-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(233,216,253,0.12);
+    }
+    .hero-ring-1 { width: 600px; height: 600px; right: -100px; top: -100px; }
+    .hero-ring-2 { width: 450px; height: 450px; right: 50px; top: 50px; border-color: rgba(246,135,179,0.1); }
+    .hero-ring-3 { width: 300px; height: 300px; right: 175px; top: 175px; border-color: rgba(233,216,253,0.08); }
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(233,216,253,0.18) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 80% 80% at 70% 50%, black 30%, transparent 70%);
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 5%;
+      width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+      min-height: calc(100vh - 72px);
+    }
+    .hero-content { animation: fadeUp 0.9s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUpDelay {
+      0%,20% { opacity: 0; transform: translateY(40px); }
+      100%   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 18px;
+      background: rgba(246,135,179,0.15);
+      border: 1px solid rgba(246,135,179,0.35);
+      border-radius: 50px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 24px;
+      animation: fadeUpDelay 1s ease both;
+    }
+    .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.4)} }
+    .hero-h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: white; line-height: 1.1; margin-bottom: 8px;
+      animation: fadeUpDelay 1s 0.15s ease both;
+    }
+    .hero-h1 em { color: var(--gold); font-style: normal; display: block; }
+    .hero-name {
+      font-size: 1rem; color: var(--blue-s);
+      font-family: 'DM Sans', sans-serif; font-weight: 400;
+      margin-bottom: 24px; letter-spacing: 0.3px;
+      animation: fadeUpDelay 1s 0.25s ease both;
+    }
+    .hero-name strong { color: white; font-weight: 600; }
+    .hero-desc {
+      font-size: 1rem; color: rgba(233,216,253,0.85); line-height: 1.7;
+      max-width: 480px; margin-bottom: 36px;
+      animation: fadeUpDelay 1s 0.35s ease both;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; animation: fadeUpDelay 1s 0.45s ease both; }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, var(--gold) 0%, #D53F8C 100%);
+      color: var(--navy); font-weight: 700; font-size: 0.95rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 24px rgba(246,135,179,0.4);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
+    }
+    .btn-gold:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 36px rgba(246,135,179,0.55); }
+    .btn-gold:active { transform: translateY(-1px) scale(0.99); }
+    .btn-gold::before {
+      content:''; position:absolute; inset:0; border-radius:50px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 50%);
+      opacity:0; transition: opacity var(--transition); pointer-events:none;
+    }
+    .btn-gold { position: relative; overflow: hidden; }
+    .btn-gold:hover::before { opacity:1; }
+    .btn-gold svg { width: 18px; height: 18px; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.85); font-weight: 500; font-size: 0.95rem;
+      border-radius: 50px;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+    }
+    .btn-outline:hover { border-color: white; color: white; background: rgba(255,255,255,0.08); }
+    .hero-image-wrap {
+      display: flex; justify-content: center; align-items: flex-end;
+      animation: fadeUpDelay 1s 0.2s ease both;
+      position: relative;
+    }
+    .hero-img-bg {
+      position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+      width: 380px; height: 380px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(233,216,253,0.12) 0%, transparent 70%);
+    }
+    .hero-silhouette {
+      position: relative; z-index: 1;
+      width: 360px; height: 480px;
+      background: linear-gradient(170deg, rgba(233,216,253,0.15) 0%, rgba(107,70,193,0.4) 100%);
+      border-radius: 200px 200px 80px 80px;
+      border: 1px solid rgba(233,216,253,0.2);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      overflow: hidden;
+    }
+    /* Doctor photo — drops in as images/doctor-hero.jpg; falls back to SVG silhouette if missing */
+    .hero-photo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 200px 200px 80px 80px;
+      z-index: 3;
+    }
+    /* Doctor SVG silhouette (fallback) */
+    .doctor-svg { width: 280px; margin-bottom: -4px; position: relative; z-index: 1; }
+    .hero-card-float {
+      position: absolute;
+      background: rgba(255,255,255,0.10); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px; padding: 12px 16px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero-card-float.left {
+      left: -30px; top: 30%;
+      animation-delay: 0.5s;
+    }
+    .hero-card-float.right {
+      right: -20px; top: 55%;
+    }
+    .hero-card-val { font-size: 1.4rem; font-weight: 700; color: var(--gold); font-family: 'DM Serif Display',serif; }
+    .hero-card-lab { font-size: 0.7rem; color: var(--blue-s); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+    .hero-verified-badge {
+      position: absolute; right: -10px; top: 15%;
+      background: linear-gradient(135deg, #22C55E, #16A34A);
+      border-radius: 12px; padding: 8px 12px;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.72rem; font-weight: 600; color: white;
+      box-shadow: 0 4px 16px rgba(34,197,94,0.4);
+      animation: float 4s 1s ease-in-out infinite;
+    }
+    .hero-verified-badge svg { width: 14px; height: 14px; fill: white; }
+    .hero-scroll {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.4); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase;
+      animation: fadeUpDelay 1s 0.8s ease both;
+    }
+    .hero-scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine { 0%,100%{transform:scaleY(1);opacity:.6} 50%{transform:scaleY(0.6);opacity:1} }
+
+    /* ─── STATS BAR ─────────────────────────────────────────────── */
+    #stats {
+      background: var(--navy);
+      padding: 0;
+    }
+    .stats-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 28px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item::before {
+      content: '';
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 3px;
+      background: var(--gold);
+      transition: width 0.6s ease;
+    }
+    .stat-item.visible::before { width: 40px; }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem; color: var(--gold);
+      line-height: 1; margin-bottom: 4px;
+    }
+    .stat-suffix { font-size: 1.4rem; }
+    .stat-label { font-size: 0.78rem; color: var(--blue-s); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    /* ─── PHILOSOPHY ─────────────────────────────────────────── */
+    #philosophy {
+      padding: 96px 5%;
+      background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    #philosophy::before {
+      content:''; position: absolute; inset:0;
+      background-image: radial-gradient(circle, rgba(107,70,193,0.04) 1px, transparent 1px);
+      background-size: 42px 42px; pointer-events: none;
+    }
+    .philosophy-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+    .philosophy-header { text-align: center; margin-bottom: 48px; }
+
+    .philosophy-quote {
+      max-width: 820px; margin: 0 auto 64px;
+      background: linear-gradient(135deg, var(--navy) 0%, #805AD5 100%);
+      color: white; padding: 48px 48px 40px; border-radius: 20px;
+      position: relative; box-shadow: 0 16px 48px rgba(107,70,193,0.18);
+      text-align: center;
+    }
+    .philosophy-quote .quote-mark {
+      width: 48px; height: 48px; fill: var(--gold);
+      margin: 0 auto 16px; display: block; opacity: 0.95;
+    }
+    .philosophy-quote blockquote {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.2rem, 2.1vw, 1.55rem);
+      line-height: 1.55; color: white; margin-bottom: 20px;
+      font-style: italic;
+    }
+    .philosophy-quote cite {
+      font-family: 'DM Sans', sans-serif; font-style: normal;
+      font-size: 0.88rem; font-weight: 500; color: var(--blue-s);
+      letter-spacing: 0.5px;
+    }
+    .philosophy-quote::before, .philosophy-quote::after {
+      content: ''; position: absolute; width: 100px; height: 100px;
+      border-radius: 50%; opacity: 0.08; background: var(--gold); pointer-events: none;
+    }
+    .philosophy-quote::before { top: -30px; left: -30px; }
+    .philosophy-quote::after { bottom: -40px; right: -40px; width: 160px; height: 160px; }
+
+    .doctor-highlights {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      margin-bottom: 48px;
+    }
+    .dh-card {
+      background: white; border-radius: 16px;
+      padding: 28px 26px;
+      border: 1.5px solid rgba(107,70,193,0.08);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .dh-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-d));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .dh-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: var(--shadow-h);
+      border-color: rgba(246,135,179,0.3);
+    }
+    .dh-card:hover::after { transform: scaleX(1); }
+    .dh-card:hover .dh-icon { transform: scale(1.08) rotate(-4deg); }
+    .dh-icon { transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+    .dh-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .dh-icon svg { width: 26px; height: 26px; }
+    .dh-icon-navy { background: rgba(107,70,193,0.1); }
+    .dh-icon-navy svg { fill: var(--navy); }
+    .dh-icon-gold { background: rgba(246,135,179,0.14); }
+    .dh-icon-gold svg { fill: var(--gold-d); }
+    .dh-icon-blue { background: rgba(233,216,253,0.35); }
+    .dh-icon-blue svg { fill: var(--navy); }
+    .dh-card h4 {
+      font-size: 1.08rem; color: var(--navy); margin-bottom: 8px;
+    }
+    .dh-card p {
+      font-size: 0.88rem; color: var(--text-l); line-height: 1.65;
+    }
+
+    /* Credential card */
+    .credential-card {
+      display: flex; align-items: center; gap: 24px;
+      max-width: 820px; margin: 0 auto;
+      background: linear-gradient(135deg, #FBF5FF 0%, #FFFFFF 100%);
+      border: 1.5px solid rgba(246,135,179,0.35);
+      border-radius: 18px; padding: 24px 28px;
+      text-decoration: none; color: inherit;
+      box-shadow: 0 4px 20px rgba(246,135,179,0.12);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .credential-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(246,135,179,0.2);
+      border-color: var(--gold);
+    }
+    .credential-seal {
+      width: 72px; height: 72px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-d) 100%);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(246,135,179,0.35);
+    }
+    .credential-seal svg { width: 40px; height: 40px; fill: white; }
+    .credential-body { flex: 1; min-width: 0; }
+    .credential-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--gold-d); margin-bottom: 6px;
+    }
+    .credential-body h4 { font-size: 1.08rem; color: var(--navy); margin-bottom: 4px; }
+    .credential-body p { font-size: 0.85rem; color: var(--text-l); line-height: 1.55; }
+    .credential-cta {
+      flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 18px; background: var(--navy); color: white;
+      border-radius: 50px; font-size: 0.82rem; font-weight: 600;
+      transition: background var(--transition), gap var(--transition);
+    }
+    .credential-card:hover .credential-cta { background: var(--gold); color: var(--navy); gap: 10px; }
+
+    /* ─── WHY PAEDIATRIC SURGERY ────────────────────────────────── */
+    #why-peds {
+      padding: 96px 5%;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF5FF 60%, #F3E8FF 100%);
+      position: relative; overflow: hidden;
+    }
+    #why-peds::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(246,135,179,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(107,70,193,0.08) 0%, transparent 40%);
+    }
+    .why-peds-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+    .why-peds-header { text-align: center; margin-bottom: 56px; }
+    .why-peds-header .section-sub { margin: 0 auto; }
+    .why-peds-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .why-peds-card {
+      background: white;
+      border-radius: 22px;
+      padding: 30px 26px;
+      border: 1.5px solid rgba(107,70,193,0.10);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .why-peds-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:4px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 100%);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .why-peds-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-h);
+      border-color: rgba(107,70,193,0.25);
+    }
+    .why-peds-card:hover::before { transform: scaleX(1); }
+    .why-peds-card:hover .why-peds-icon { transform: scale(1.1) rotate(-6deg); }
+    .why-peds-icon {
+      width: 58px; height: 58px; border-radius: 18px;
+      background: linear-gradient(135deg, rgba(107,70,193,0.12), rgba(246,135,179,0.15));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .why-peds-icon svg { width: 30px; height: 30px; fill: var(--navy); }
+    .why-peds-card h4 { font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; }
+    .why-peds-card p { font-size: 0.9rem; color: var(--text-l); line-height: 1.7; }
+    @media (max-width: 1024px) { .why-peds-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .why-peds-grid { grid-template-columns: 1fr; } #why-peds { padding: 72px 5%; } }
+
+    /* ─── WHY CHOOSE ────────────────────────────────────────────── */
+    #why {
+      padding: 96px 5%;
+      background: linear-gradient(135deg, #FAF5FF 0%, #F3E8FF 100%);
+    }
+    .why-inner { max-width: 1200px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 56px; }
+    .why-header .section-sub { margin: 0 auto; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .why-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+      border-bottom: 3px solid transparent;
+    }
+    .why-card:hover { transform: translateY(-6px) scale(1.015); box-shadow: var(--shadow-h); border-bottom-color: var(--gold); }
+    .why-card:hover .why-card-icon { transform: scale(1.08) rotate(5deg); }
+    .why-card-icon { transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+    .why-card-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      background: linear-gradient(135deg, var(--bg) 0%, #F3E8FF 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .why-card-icon svg { width: 30px; height: 30px; fill: var(--navy); }
+    .why-card h4 { font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; }
+    .why-card p { font-size: 0.875rem; color: var(--text-l); line-height: 1.65; }
+
+    /* ─── EDUCATION TIMELINE ────────────────────────────────────── */
+    #education {
+      padding: 96px 5%;
+      background: var(--white);
+    }
+    .edu-inner { max-width: 900px; margin: 0 auto; }
+    .edu-header { text-align: center; margin-bottom: 64px; }
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 16px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--blue-s), var(--navy));
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 48px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -32px; top: 6px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px rgba(246,135,179,0.25);
+    }
+    .timeline-item.visible .timeline-dot::after {
+      content:''; position:absolute; inset:-3px; border-radius:50%;
+      border: 2px solid var(--gold);
+      animation: dotPing 2.5s ease-out 0.2s 1 both;
+    }
+    @keyframes dotPing {
+      0% { opacity: 0.9; transform: scale(1); }
+      100% { opacity: 0; transform: scale(2.4); }
+    }
+    .timeline-year {
+      display: inline-block;
+      padding: 4px 14px;
+      background: linear-gradient(135deg, var(--gold) 0%, #D53F8C 100%);
+      color: var(--navy); font-weight: 700; font-size: 0.82rem;
+      border-radius: 50px; margin-bottom: 10px;
+    }
+    .timeline-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      border-left: 3px solid var(--gold);
+    }
+    .timeline-card:hover { box-shadow: var(--shadow-h); transform: translateX(6px) scale(1.01); border-left-width: 5px; }
+    .timeline-card { transition: box-shadow var(--transition), transform var(--transition), border-left-width 0.2s ease; }
+    .timeline-card h4 { font-size: 1.15rem; color: var(--navy); margin-bottom: 4px; }
+    .timeline-card .timeline-inst { font-size: 0.88rem; color: var(--text-l); }
+    .timeline-card .timeline-badge {
+      display: inline-block; margin-top: 8px;
+      padding: 3px 10px;
+      background: rgba(107,70,193,0.08);
+      border-radius: 50px;
+      font-size: 0.72rem; color: var(--navy); font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /*  CLINIC PAGE                                                 */
+    /* ═══════════════════════════════════════════════════════════ */
+    #page-clinic {
+      padding-top: 72px;
+      background: var(--white);
+    }
+    .clinic-hero {
+      /* Drop images/doctor-office.jpg to show behind the navy gradient overlay; fallback is the solid navy gradient alone. */
+      background-color: #4C1D95;
+      background-image:
+        linear-gradient(135deg, rgba(76,29,149,0.90) 0%, rgba(107,70,193,0.92) 100%),
+        url('images/doctor-office.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 72px 5% 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .clinic-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(233,216,253,0.12) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .clinic-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 12px; position: relative; }
+    .clinic-hero p { color: var(--blue-s); font-size: 1rem; max-width: 540px; margin: 0 auto; position: relative; }
+
+    /* ─── CONDITIONS ────────────────────────────────────────────── */
+    #conditions {
+      padding: 80px 5%;
+      background: var(--white);
+    }
+    .conditions-inner { max-width: 1200px; margin: 0 auto; }
+    .conditions-header { text-align: center; margin-bottom: 56px; }
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
+    }
+    .condition-card {
+      background: var(--white);
+      border: 1.5px solid rgba(107,70,193,0.08);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      border-left: 3px solid transparent;
+      position: relative;
+    }
+    .condition-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: var(--shadow-h);
+      border-left-color: var(--gold);
+      border-color: rgba(107,70,193,0.12);
+    }
+    .condition-card:hover .condition-icon { transform: scale(1.1) rotate(-4deg); background: var(--navy); }
+    .condition-card:hover .condition-icon svg { fill: var(--gold); }
+    .condition-icon { transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background var(--transition); }
+    .condition-icon svg { transition: fill var(--transition); }
+    .condition-icon {
+      width: 52px; height: 52px;
+      background: var(--bg);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .condition-icon svg { width: 26px; height: 26px; fill: var(--navy); }
+    .condition-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 6px; }
+    .condition-card p { font-size: 0.83rem; color: var(--text-l); line-height: 1.6; }
+    .condition-card .learn-more {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.78rem; font-weight: 600; color: var(--gold-d);
+      margin-top: 12px; opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .condition-card:hover .learn-more { opacity: 1; }
+
+    /* ─── PROCEDURES STRIP ──────────────────────────────────────── */
+    #procedures {
+      padding: 64px 5%;
+      /* Drop images/doctor-surgery.jpg to show behind the navy gradient overlay; fallback is solid navy. */
+      background-color: var(--navy);
+      background-image:
+        linear-gradient(135deg, rgba(107,70,193,0.93) 0%, rgba(76,29,149,0.95) 100%),
+        url('images/doctor-surgery.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: scroll;
+    }
+    .procedures-inner { max-width: 1200px; margin: 0 auto; }
+    .procedures-header { text-align: center; margin-bottom: 40px; }
+    .procedures-header .section-heading { color: white; }
+    .procedures-header .section-tag { background: rgba(246,135,179,0.15); border-color: rgba(246,135,179,0.3); }
+    .procedures-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    }
+    .procedure-tile {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .procedure-tile:hover { background: rgba(246,135,179,0.12); transform: translateY(-5px) scale(1.02); border-color: rgba(246,135,179,0.4); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+    .procedure-tile:hover .procedure-tile-icon { transform: scale(1.1) rotate(-6deg); background: rgba(246,135,179,0.25); }
+    .procedure-tile-icon { transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background var(--transition); }
+    .procedure-tile-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: rgba(246,135,179,0.12);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .procedure-tile-icon svg { width: 28px; height: 28px; fill: var(--gold); }
+    .procedure-tile h4 { font-size: 0.95rem; color: white; }
+    .procedure-tile p { font-size: 0.8rem; color: var(--blue-s); margin-top: 6px; line-height: 1.5; }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /*  APPOINTMENTS PAGE                                           */
+    /* ═══════════════════════════════════════════════════════════ */
+    #page-appointments {
+      padding-top: 72px;
+      background: var(--bg);
+      min-height: 100vh;
+    }
+    .appt-hero {
+      background: linear-gradient(135deg, #4C1D95 0%, #6B46C1 100%);
+      padding: 72px 5% 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .appt-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(233,216,253,0.12) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .appt-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 12px; position: relative; }
+    .appt-hero p { color: var(--blue-s); font-size: 1rem; max-width: 480px; margin: 0 auto; position: relative; }
+    #appt-main {
+      padding: 64px 5%;
+    }
+    .appt-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start;
+    }
+    /* Form */
+    .appt-form-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .appt-form-card h2 { font-size: 1.7rem; color: var(--navy); margin-bottom: 6px; }
+    .appt-form-card .form-sub { font-size: 0.88rem; color: var(--text-l); margin-bottom: 32px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: 0.82rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.3px; margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid rgba(107,70,193,0.15);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.93rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(246,135,179,0.15);
+      background: white;
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%231B2B6B'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 18px; padding-right: 42px; }
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--gold) 0%, #D53F8C 100%);
+      color: var(--navy); font-weight: 700; font-size: 1rem;
+      border-radius: 12px;
+      border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      box-shadow: 0 4px 20px rgba(246,135,179,0.35);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(246,135,179,0.45); }
+    .btn-submit:disabled { opacity: 0.65; cursor: wait; transform: none; box-shadow: 0 4px 12px rgba(246,135,179,0.25); }
+    /* Error state */
+    #form-error {
+      display: none;
+      margin: 0 0 16px;
+      padding: 12px 16px;
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      color: #991B1B;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    #form-error.visible { display: block; animation: fadeUp 0.3s ease both; }
+    /* Success state */
+    #form-success {
+      display: none; text-align: center; padding: 48px 24px;
+    }
+    .success-checkmark {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, #22C55E, #16A34A);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      animation: checkPulse 0.6s ease;
+    }
+    @keyframes checkPulse {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.15); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .success-checkmark svg { width: 40px; height: 40px; stroke: white; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    #form-success h3 { font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
+    #form-success p { color: var(--text-l); font-size: 0.95rem; }
+    /* Clinic info card */
+    .clinic-info-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .map-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, #F3E8FF 0%, var(--blue-s) 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .map-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(107,70,193,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107,70,193,0.06) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    .map-pin {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    }
+    .map-pin-icon {
+      width: 48px; height: 48px;
+      background: var(--navy);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(107,70,193,0.4);
+    }
+    .map-pin-icon svg { width: 22px; height: 22px; fill: var(--gold); transform: rotate(45deg); }
+    .map-pin span { font-size: 0.75rem; font-weight: 600; color: var(--navy); background: white; padding: 4px 12px; border-radius: 50px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .clinic-info-body { padding: 28px; }
+    .clinic-info-body h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 4px; }
+    .clinic-tagline { font-size: 0.8rem; color: var(--gold-d); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px; }
+    .clinic-detail {
+      display: flex; gap: 12px; align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .clinic-detail-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      background: var(--bg); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .clinic-detail-icon svg { width: 18px; height: 18px; fill: var(--navy); }
+    .clinic-detail-text { font-size: 0.87rem; color: var(--text); line-height: 1.5; }
+    .clinic-detail-label { font-size: 0.72rem; font-weight: 600; color: var(--text-l); text-transform: uppercase; letter-spacing: 0.5px; }
+    a.clinic-detail-link {
+      text-decoration: none; color: inherit;
+      padding: 10px 12px; margin: 0 -12px 10px;
+      border-radius: 12px; cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    a.clinic-detail-link:hover { background: var(--bg); transform: translateX(2px); }
+    a.clinic-detail-link:hover .clinic-detail-label { color: var(--gold-d); }
+    a.clinic-detail-link:hover .clinic-detail-icon { background: var(--navy); }
+    a.clinic-detail-link:hover .clinic-detail-icon svg { fill: var(--gold); }
+    .clinic-hours {
+      margin-top: 20px; padding-top: 20px;
+      border-top: 1px solid rgba(107,70,193,0.08);
+    }
+    .hours-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(107,70,193,0.07);
+      font-size: 0.85rem;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { color: var(--text-l); font-weight: 500; }
+    .hours-time { color: var(--navy); font-weight: 600; }
+    .hours-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 10px;
+      background: rgba(34,197,94,0.1);
+      border-radius: 50px; font-size: 0.72rem; font-weight: 600; color: #16A34A;
+    }
+    .hours-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:#22C55E; }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      background: #3B0764;
+      padding: 48px 5% 24px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand { }
+    .footer-brand .nav-logo { margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.87rem; color: rgba(233,216,253,0.6); line-height: 1.7; max-width: 320px; }
+    .footer-col h5 { font-family: 'DM Serif Display', serif; font-size: 1rem; color: white; margin-bottom: 16px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.87rem; color: rgba(233,216,253,0.6); transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.78rem; color: rgba(233,216,253,0.4);
+      flex-wrap: wrap; gap: 8px;
+    }
+    .footer-bottom span a { color: var(--gold); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .doctor-highlights { grid-template-columns: repeat(2, 1fr); }
+      .procedures-strip { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1/-1; }
+      #philosophy, #why, #education { padding: 80px 5%; }
+    }
+
+    /* Tablet & large phones */
+    @media (max-width: 768px) {
+      /* Navbar */
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      #navbar { padding: 0 20px; height: 64px; }
+      .mobile-menu { top: 64px; }
+      .nav-logo-icon { width: 36px; height: 36px; border-radius: 9px; }
+      .nav-logo-icon svg { width: 20px; height: 20px; }
+      .nav-logo-name { font-size: 0.9rem; }
+      .nav-logo-title { font-size: 0.62rem; letter-spacing: 0.8px; }
+
+      /* Hero — single-column, image first */
+      #hero { padding-top: 64px; min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 28px; padding: 32px 24px 56px; min-height: 0; }
+      .hero-image-wrap { order: -1; margin-bottom: 8px; }
+      .hero-silhouette { width: 240px; height: 300px; border-radius: 140px 140px 60px 60px; }
+      .hero-photo { border-radius: 140px 140px 60px 60px; }
+      .doctor-svg { width: 190px; }
+      .hero-img-bg { width: 280px; height: 280px; }
+      /* Hide cluttering floating chips & badge on mobile — big stats section below handles this */
+      .hero-card-float, .hero-verified-badge { display: none; }
+      .hero-badge { margin-bottom: 16px; padding: 5px 14px; font-size: 0.7rem; }
+      .hero-h1 { font-size: clamp(2rem, 8vw, 2.6rem); margin-bottom: 6px; }
+      .hero-name { font-size: 0.88rem; margin-bottom: 16px; padding: 0 8px; }
+      .hero-desc { font-size: 0.92rem; margin: 0 auto 24px; padding: 0 4px; max-width: 100%; }
+      .hero-actions { justify-content: center; gap: 10px; }
+      .btn-gold, .btn-outline { padding: 12px 22px; font-size: 0.9rem; }
+      .hero-scroll { display: none; }
+
+      /* Stats */
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 22px 16px; }
+      .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .stat-num { font-size: 1.9rem; }
+      .stat-suffix { font-size: 1.2rem; }
+      .stat-label { font-size: 0.7rem; }
+
+      /* Section paddings tighter */
+      #philosophy, #why, #education { padding: 64px 5%; }
+      .section-heading { font-size: clamp(1.6rem, 6vw, 2rem); }
+      .section-sub { font-size: 0.95rem; }
+
+      /* Philosophy */
+      .philosophy-header { margin-bottom: 32px; }
+      .philosophy-quote { padding: 36px 24px 28px; margin-bottom: 40px; }
+      .philosophy-quote .quote-mark { width: 38px; height: 38px; margin-bottom: 10px; }
+      .doctor-highlights { grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px; }
+      .dh-card { padding: 22px 18px; }
+      .dh-icon { width: 44px; height: 44px; border-radius: 12px; margin-bottom: 14px; }
+      .dh-icon svg { width: 22px; height: 22px; }
+      .dh-card h4 { font-size: 0.98rem; }
+      .dh-card p { font-size: 0.82rem; }
+      .credential-card { flex-direction: column; text-align: center; padding: 24px 20px; gap: 16px; }
+      .credential-cta { width: 100%; justify-content: center; }
+      .credential-body h4 { font-size: 1rem; }
+
+      /* Why */
+      .why-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .why-card { padding: 24px 16px; }
+      .why-card-icon { width: 52px; height: 52px; margin-bottom: 14px; }
+      .why-card h4 { font-size: 0.98rem; }
+      .why-card p { font-size: 0.82rem; }
+
+      /* Education timeline */
+      .timeline { padding-left: 28px; }
+      .timeline::before { left: 10px; }
+      .timeline-dot { left: -22px; width: 14px; height: 14px; }
+      .timeline-card { padding: 18px 18px; }
+      .timeline-card h4 { font-size: 1.02rem; }
+
+      /* Clinic page */
+      .clinic-hero { padding: 56px 5% 64px; }
+      #conditions { padding: 64px 5%; }
+      .conditions-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .condition-card { padding: 22px 18px; }
+      .condition-icon { width: 46px; height: 46px; margin-bottom: 12px; }
+      .condition-card h4 { font-size: 0.95rem; }
+      .condition-card p { font-size: 0.8rem; }
+      .condition-card .learn-more { opacity: 1; }
+      #procedures { padding: 52px 5%; }
+      .procedures-strip { gap: 12px; }
+      .procedure-tile { padding: 22px 16px; }
+
+      /* Appointments page */
+      .appt-hero { padding: 56px 5% 56px; }
+      #appt-main { padding: 44px 5%; }
+      .appt-inner { grid-template-columns: 1fr; gap: 24px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .appt-form-card { padding: 28px 20px; border-radius: 16px; }
+      .appt-form-card h2 { font-size: 1.4rem; }
+      .appt-form-card .form-sub { font-size: 0.85rem; margin-bottom: 24px; }
+      .form-group { margin-bottom: 16px; }
+      .form-group label { font-size: 0.78rem; }
+      .btn-submit { padding: 14px; font-size: 0.95rem; }
+      .clinic-info-body { padding: 22px 20px; }
+      .map-placeholder { height: 160px; }
+
+      /* Footer */
+      footer { padding: 40px 5% 20px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 28px; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; font-size: 0.72rem; }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      #navbar { padding: 0 16px; }
+      .nav-logo { gap: 8px; }
+      .nav-logo-icon { width: 34px; height: 34px; }
+      .nav-logo-name { font-size: 0.85rem; }
+      .nav-logo-title { font-size: 0.58rem; }
+
+      .why-grid, .conditions-grid, .doctor-highlights { grid-template-columns: 1fr; }
+      .procedures-strip { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+
+      .hero-inner { padding: 24px 16px 48px; }
+      .hero-silhouette { width: 210px; height: 270px; }
+      .hero-photo, .hero-silhouette { border-radius: 120px 120px 50px 50px; }
+      .hero-h1 { font-size: 1.9rem; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .btn-gold, .btn-outline { width: 100%; justify-content: center; }
+
+      #philosophy, #why, #education, #conditions { padding: 52px 5%; }
+      .philosophy-quote { padding: 28px 20px 24px; }
+      .philosophy-quote blockquote { font-size: 1.05rem; }
+
+      .stat-item { padding: 18px 12px; }
+      .stat-num { font-size: 1.65rem; }
+
+      .appt-form-card { padding: 24px 16px; }
+
+      /* Bigger touch targets for form */
+      .form-group input, .form-group select, .form-group textarea { padding: 14px 14px; font-size: 0.95rem; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /*  LEARN PAGE — NEUROSURGERY GUIDE                             */
+    /* ═══════════════════════════════════════════════════════════ */
+    #page-learn { padding-top: 72px; background: #FAF5FF; }
+
+    /* ─── LEARN HERO ─────────────────────────────────────────── */
+    .learn-hero {
+      background-color: #4C1D95;
+      background-image: linear-gradient(135deg, rgba(76,29,149,0.94) 0%, rgba(107,70,193,0.90) 100%),
+        url('images/doctor-surgery.jpg');
+      background-size: cover; background-position: center;
+      padding: 80px 5% 64px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .learn-hero::before {
+      content:''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(233,216,253,0.12) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .learn-hero > * { position: relative; }
+    .learn-hero h1 { color: white; font-size: clamp(2rem,4vw,3rem); margin-bottom: 12px; }
+    .learn-hero p { color: var(--blue-s); font-size: 1rem; max-width: 600px; margin: 0 auto 32px; line-height:1.7;}
+
+    /* ─── ANATOMY NAVIGATOR ───────────────────────────────────── */
+    .anatomy-nav {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 40px;
+      flex-wrap: wrap;
+    }
+    .anatomy-diagram {
+      position: relative; width: 240px; flex-shrink: 0;
+    }
+    .anatomy-diagram svg { width: 100%; height: auto; }
+    .anatomy-hotspot {
+      position: absolute; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .anatomy-hotspot:hover { transform: scale(1.18); }
+    .anatomy-hotspot.active { box-shadow: 0 0 0 3px var(--gold); }
+    .anatomy-hotspot-brain { top: 4%; left: 50%; transform: translateX(-50%); width:70px; height:70px; }
+    .anatomy-hotspot-cerebro { top: 18%; right: 2%; width:44px; height:44px; }
+    .anatomy-hotspot-spine { bottom: 18%; left: 50%; transform: translateX(-50%); width:54px; height:54px; }
+    .anatomy-hotspot-nerve { bottom: 5%; right: 5%; width:44px; height:44px; }
+    .anatomy-hotspot svg { width: 55%; height: 55%; }
+
+    .anatomy-legend {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .anatomy-legend-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 16px; border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      cursor: pointer;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .anatomy-legend-item:hover { background: rgba(246,135,179,0.15); border-color: rgba(246,135,179,0.3); }
+    .anatomy-legend-item.active { background: rgba(246,135,179,0.15); border-color: rgba(246,135,179,0.4); }
+    .anatomy-legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .anatomy-legend-text { font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.85); line-height: 1.2; }
+    .anatomy-legend-text span { display: block; font-size: 0.72rem; color: rgba(233,216,253,0.65); font-weight: 400; }
+
+    /* ─── FILTER BAR ──────────────────────────────────────────── */
+    .ns-filter-bar {
+      max-width: 1000px; margin: 0 auto;
+      padding: 40px 5% 0;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .ns-filter-label { font-size: 0.78rem; font-weight: 700; color: var(--text-l); text-transform: uppercase; letter-spacing: 1px; margin-right: 4px; }
+    .ns-chip {
+      padding: 7px 18px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600;
+      border: 1.5px solid rgba(107,70,193,0.14);
+      color: var(--text-l); background: white;
+      cursor: pointer; transition: all 0.25s;
+    }
+    .ns-chip:hover { border-color: var(--navy); color: var(--navy); }
+    .ns-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
+
+    /* ─── ACCORDION ───────────────────────────────────────────── */
+    .ns-accordion {
+      max-width: 1000px; margin: 0 auto;
+      padding: 24px 5% 80px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .ns-card {
+      background: white;
+      border-radius: 16px;
+      border: 1.5px solid rgba(107,70,193,0.09);
+      overflow: hidden;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    .ns-card:hover { box-shadow: 0 4px 24px rgba(107,70,193,0.1); }
+    .ns-card.open { border-color: rgba(246,135,179,0.4); box-shadow: 0 8px 40px rgba(107,70,193,0.13); }
+
+    .ns-card-head {
+      width: 100%; display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px; background: none; border: none;
+      cursor: pointer; text-align: left;
+      transition: background 0.2s;
+    }
+    .ns-card-head:hover { background: rgba(107,70,193,0.03); }
+    .ns-card-icon {
+      width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .ns-card-icon svg { width: 26px; height: 26px; }
+    .ns-card.open .ns-card-icon { background: var(--navy) !important; }
+    .ns-card.open .ns-card-icon svg { fill: var(--gold) !important; }
+    .ns-card-meta { flex: 1; min-width: 0; }
+    .ns-card-meta h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 3px; }
+    .ns-card-meta p { font-size: 0.82rem; color: var(--text-l); line-height: 1.4; }
+    .ns-card-badge {
+      padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; flex-shrink: 0;
+    }
+    .ns-card-chevron {
+      width: 28px; height: 28px; flex-shrink: 0; display: flex;
+      align-items: center; justify-content: center;
+      border-radius: 50%; background: var(--bg);
+      transition: transform 0.35s, background 0.2s;
+    }
+    .ns-card-chevron svg { width: 16px; height: 16px; fill: var(--navy); transition: fill 0.2s; }
+    .ns-card.open .ns-card-chevron { transform: rotate(180deg); background: var(--navy); }
+    .ns-card.open .ns-card-chevron svg { fill: white; }
+
+    /* Smooth grid-template-rows accordion */
+    .ns-card-body {
+      display: grid; grid-template-rows: 0fr;
+      transition: grid-template-rows 0.42s cubic-bezier(.4,0,.2,1);
+    }
+    .ns-card.open .ns-card-body { grid-template-rows: 1fr; }
+    .ns-card-body-inner { overflow: hidden; }
+
+    /* ─── TABS ────────────────────────────────────────────────── */
+    .ns-tabs {
+      display: flex; gap: 0; border-bottom: 2px solid var(--bg);
+      padding: 0 24px; overflow-x: auto; scrollbar-width: none;
+    }
+    .ns-tabs::-webkit-scrollbar { display: none; }
+    .ns-tab {
+      padding: 12px 18px; font-size: 0.82rem; font-weight: 600;
+      color: var(--text-l); border: none; background: none; cursor: pointer;
+      border-bottom: 2px solid transparent; margin-bottom: -2px;
+      white-space: nowrap; transition: color 0.2s, border-color 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .ns-tab:hover { color: var(--navy); }
+    .ns-tab.active { color: var(--navy); border-bottom-color: var(--gold); }
+
+    .ns-panels { padding: 28px 24px 32px; }
+    .ns-panel { display: none; animation: fadePanel 0.3s ease; }
+    .ns-panel.active { display: block; }
+    @keyframes fadePanel { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+    /* Overview */
+    .ns-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    .ns-overview-text p { font-size: 0.93rem; color: var(--text); line-height: 1.75; margin-bottom: 12px; }
+    .ns-fact-box {
+      background: linear-gradient(135deg, var(--bg) 0%, #F3E8FF 100%);
+      border-radius: 14px; padding: 20px;
+      border-left: 3px solid var(--gold);
+    }
+    .ns-fact-box h5 { font-size: 0.72rem; font-weight: 700; color: var(--text-l); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .ns-fact { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+    .ns-fact-num { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); line-height: 1; }
+    .ns-fact-desc { font-size: 0.8rem; color: var(--text-l); line-height: 1.4; padding-top: 4px; }
+
+    /* Diagram box */
+    .ns-diagram-box {
+      background: var(--bg); border-radius: 14px; padding: 20px;
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      border: 1px solid rgba(107,70,193,0.08);
+    }
+    .ns-diagram-box svg { width: 100%; max-width: 220px; height: auto; }
+    .ns-diagram-box p { font-size: 0.75rem; color: var(--text-l); text-align: center; font-style: italic; }
+
+    /* Symptoms */
+    .ns-symptom-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 12px; }
+    .ns-symptom-item {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--bg); border-radius: 10px; padding: 12px 14px;
+      font-size: 0.85rem; color: var(--text); font-weight: 500;
+    }
+    .ns-symptom-item .si {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: white; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(107,70,193,0.08);
+    }
+    .ns-symptom-item .si svg { width: 18px; height: 18px; fill: var(--navy); }
+
+    /* Diagnosis */
+    .ns-diag-list { display: flex; flex-direction: column; gap: 10px; }
+    .ns-diag-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--bg); border-radius: 12px; padding: 14px 16px;
+    }
+    .ns-diag-icon { width: 40px; height: 40px; border-radius: 10px; background: white; flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(107,70,193,0.07); }
+    .ns-diag-icon svg { width: 20px; height: 20px; fill: var(--navy); }
+    .ns-diag-text h6 { font-size: 0.88rem; color: var(--navy); margin-bottom: 2px; }
+    .ns-diag-text p { font-size: 0.8rem; color: var(--text-l); line-height: 1.5; }
+
+    /* Treatment */
+    .ns-treatment-track {
+      display: flex; flex-direction: column; gap: 0;
+      position: relative; padding-left: 28px;
+    }
+    .ns-treatment-track::before {
+      content:''; position: absolute; left: 10px; top: 20px; bottom: 20px;
+      width: 2px; background: linear-gradient(to bottom, var(--gold), var(--navy));
+    }
+    .ns-treat-step { display: flex; gap: 16px; margin-bottom: 18px; position: relative; }
+    .ns-treat-dot {
+      position: absolute; left: -28px; top: 5px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: white; border: 2px solid var(--gold);
+      flex-shrink: 0;
+    }
+    .ns-treat-dot.surgical { background: var(--navy); border-color: var(--navy); }
+    .ns-treat-content { flex: 1; }
+    .ns-treat-content h6 { font-size: 0.88rem; color: var(--navy); font-weight: 700; margin-bottom: 4px; }
+    .ns-treat-content p { font-size: 0.82rem; color: var(--text-l); line-height: 1.55; }
+    .ns-treat-tag {
+      display: inline-block; padding: 2px 8px; border-radius: 50px;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    /* Surgery steps */
+    .ns-surgery-steps {
+      display: flex; flex-direction: column; gap: 0;
+      counter-reset: surgery-step;
+    }
+    .ns-surgery-step {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 0; border-bottom: 1px dashed rgba(107,70,193,0.1);
+      counter-increment: surgery-step;
+    }
+    .ns-surgery-step:last-child { border-bottom: none; }
+    .ns-step-num {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: var(--navy); color: var(--gold);
+      font-family: 'DM Serif Display', serif; font-size: 1.05rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ns-step-icon-box {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: var(--bg); display: flex; align-items: center; justify-content: center;
+    }
+    .ns-step-icon-box svg { width: 18px; height: 18px; fill: var(--navy); }
+    .ns-step-content h6 { font-size: 0.9rem; color: var(--navy); font-weight: 700; margin-bottom: 3px; }
+    .ns-step-content p { font-size: 0.82rem; color: var(--text-l); line-height: 1.55; }
+    .ns-surgery-note {
+      margin-top: 20px; padding: 14px 18px; border-radius: 10px;
+      background: rgba(246,135,179,0.08); border: 1px solid rgba(246,135,179,0.25);
+      font-size: 0.82rem; color: var(--text-l); line-height: 1.55;
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .ns-surgery-note svg { width: 16px; height: 16px; fill: var(--gold-d); flex-shrink: 0; margin-top: 2px; }
+
+    /* Section header */
+    .ns-section-head { max-width: 1000px; margin: 0 auto; padding: 48px 5% 0; }
+    .ns-section-head h2 { font-size: clamp(1.7rem,3vw,2.4rem); color: var(--navy); margin-bottom: 8px; }
+    .ns-section-head p { font-size: 0.95rem; color: var(--text-l); max-width: 580px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .anatomy-nav { flex-direction: column; gap: 24px; }
+      .anatomy-diagram { width: 180px; }
+      .ns-overview-grid { grid-template-columns: 1fr; }
+      .ns-card-badge { display: none; }
+    }
+    @media (max-width: 480px) {
+      .ns-card-head { padding: 16px; gap: 12px; }
+      .ns-tabs { padding: 0 16px; }
+      .ns-panels { padding: 20px 16px 24px; }
+    }
+
+    /* ─── LEARN PAGE – EXTRA STYLES ──────────────────────────── */
+    .ns-anatomy-section {
+      background: linear-gradient(135deg, #4C1D95 0%, #6B46C1 100%);
+      padding: 44px 5% 52px;
+    }
+    .ns-anatomy-heading { text-align:center; color:white; font-size:1.3rem; margin-bottom:6px; }
+    .ns-anatomy-sub { text-align:center; color:var(--blue-s); font-size:0.85rem; margin-bottom:36px; }
+
+    .ns-stats-strip { background:white; padding:28px 5%; border-bottom:1px solid rgba(107,70,193,0.08); }
+    .ns-stats-inner { max-width:960px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); text-align:center; }
+    .ns-stat { padding:12px 8px; border-right:1px solid rgba(107,70,193,0.07); }
+    .ns-stat:last-child { border-right:none; }
+    .ns-stat-val { font-family:'DM Serif Display',serif; font-size:1.7rem; color:var(--navy); line-height:1; }
+    .ns-stat-val span { color:var(--gold); }
+    .ns-stat-lbl { font-size:0.75rem; color:var(--text-l); font-weight:500; margin-top:4px; }
+
+    /* Badge colour variants */
+    .badge-brain    { background:rgba(128,90,213,.12); color:#805AD5; }
+    .badge-spine    { background:rgba(213,63,140,.12); color:#D53F8C; }
+    .badge-nerve    { background:rgba(56,178,172,.12); color:#38B2AC; }
+    .badge-vascular { background:rgba(237,137,54,.12);  color:#ED8936; }
+    .badge-trauma   { background:rgba(246,135,179,.12); color:#D53F8C; }
+
+    /* Icon bg colour variants */
+    .icon-brain    { background:rgba(128,90,213,.1); }
+    .icon-brain svg    { fill:#805AD5; }
+    .icon-spine    { background:rgba(213,63,140,.1); }
+    .icon-spine svg    { fill:#D53F8C; }
+    .icon-nerve    { background:rgba(56,178,172,.1); }
+    .icon-nerve svg    { fill:#38B2AC; }
+    .icon-vascular { background:rgba(237,137,54,.1);  }
+    .icon-vascular svg { fill:#ED8936; }
+    .icon-trauma   { background:rgba(246,135,179,.1); }
+    .icon-trauma svg   { fill:#D53F8C; }
+
+    /* Override open-state icon to keep colour readable */
+    .ns-card.open .ns-card-icon.icon-brain   svg { fill:var(--gold); }
+    .ns-card.open .ns-card-icon.icon-spine   svg { fill:var(--gold); }
+    .ns-card.open .ns-card-icon.icon-nerve   svg { fill:var(--gold); }
+    .ns-card.open .ns-card-icon.icon-vascular svg { fill:var(--gold); }
+    .ns-card.open .ns-card-icon.icon-trauma  svg { fill:var(--gold); }
+
+    /* Anatomy hotspot colours */
+    .anatomy-hotspot { background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.2); }
+    .anatomy-hotspot[data-cat="brain"]    { background:rgba(128,90,213,.25); border-color:rgba(128,90,213,.55); }
+    .anatomy-hotspot[data-cat="vascular"] { background:rgba(237,137,54,.25);  border-color:rgba(237,137,54,.55); }
+    .anatomy-hotspot[data-cat="spine"]    { background:rgba(213,63,140,.25); border-color:rgba(213,63,140,.55); }
+    .anatomy-hotspot[data-cat="nerve"]    { background:rgba(56,178,172,.25); border-color:rgba(56,178,172,.55); }
+    .anatomy-hotspot-brain:hover  { transform:translateX(-50%) scale(1.15); }
+    .anatomy-hotspot-spine:hover  { transform:translateX(-50%) scale(1.15); }
+    .anatomy-hotspot.active-hs    { box-shadow:0 0 0 4px var(--gold); }
+
+    /* Category chip colours */
+    .ns-chip[data-cat="brain"].active    { background:#805AD5; border-color:#805AD5; color:white; }
+    .ns-chip[data-cat="spine"].active    { background:#D53F8C; border-color:#D53F8C; color:white; }
+    .ns-chip[data-cat="nerve"].active    { background:#38B2AC; border-color:#38B2AC; color:white; }
+    .ns-chip[data-cat="vascular"].active { background:#ED8936; border-color:#ED8936; color:white; }
+    .ns-chip[data-cat="trauma"].active   { background:#D53F8C; border-color:#D53F8C; color:white; }
+
+    /* Filter hide */
+    .ns-card.ns-hidden { display:none; }
+
+    /* Quick-facts grid */
+    .ns-quick-facts { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+    .ns-qf { background:var(--bg); border-radius:10px; padding:12px; text-align:center; }
+    .ns-qf-val { font-family:'DM Serif Display',serif; font-size:1.2rem; color:var(--navy); }
+    .ns-qf-key { font-size:0.7rem; color:var(--text-l); font-weight:600; text-transform:uppercase; letter-spacing:.4px; margin-top:3px; }
+
+    /* Severity bar */
+    .ns-severity { display:flex; align-items:center; gap:10px; margin-top:14px; }
+    .ns-severity-lbl { font-size:0.73rem; color:var(--text-l); font-weight:600; text-transform:uppercase; letter-spacing:.5px; white-space:nowrap; }
+    .ns-sev-track { flex:1; height:6px; background:var(--bg); border-radius:3px; overflow:hidden; }
+    .ns-sev-fill  { height:100%; border-radius:3px; background:linear-gradient(90deg,#38B2AC,#F59E0B,#ED8936); transition:width .8s ease; }
+
+    /* CTA band */
+    .ns-cta-band {
+      background:linear-gradient(135deg,#4C1D95 0%,#6B46C1 100%);
+      padding:64px 5%; text-align:center; position:relative; overflow:hidden;
+    }
+    .ns-cta-band::before {
+      content:''; position:absolute; inset:0;
+      background-image:radial-gradient(circle,rgba(233,216,253,.1) 1px,transparent 1px);
+      background-size:32px 32px;
+    }
+    .ns-cta-band > * { position:relative; }
+    .ns-cta-band h2  { font-family:'DM Serif Display',serif; color:white; font-size:clamp(1.6rem,3vw,2.3rem); margin-bottom:10px; }
+    .ns-cta-band p   { color:var(--blue-s); font-size:.95rem; max-width:480px; margin:0 auto 28px; line-height:1.7; }
+
+    @media (max-width:768px) {
+      .ns-stats-inner  { grid-template-columns:repeat(2,1fr); }
+      .ns-quick-facts  { grid-template-columns:repeat(2,1fr); }
+      .anatomy-nav     { flex-direction:column; gap:28px; }
+      .anatomy-diagram { width:190px; }
+    }
+    @media (max-width:480px) {
+      .ns-quick-facts { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll-progress indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────────────── -->
+  <nav id="navbar" aria-label="Primary">
+    <div class="nav-logo">
+      <div class="nav-logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2C9.8 2 8 3.8 8 6v2H4v14h16V8h-4V6c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2h-4V6c0-1.1.9-2 2-2zm1 10v2h-2v-2H9v-2h2v-2h2v2h2v2h-2z"/></svg>
+      </div>
+      <div class="nav-logo-text">
+        <div class="nav-logo-name">Dr. Swapnil A. Pattanshetti</div>
+        <div class="nav-logo-title">Paediatric Surgeon & Urologist</div>
+      </div>
+    </div>
+    <div class="nav-links" role="menubar">
+      <span class="nav-link active" role="menuitem" tabindex="0" aria-current="page" onclick="showPage('home')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('home')}">Home</span>
+      <span class="nav-link" role="menuitem" tabindex="0" onclick="showPage('clinic')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('clinic')}">Clinic & Services</span>
+      <span class="nav-link" role="menuitem" tabindex="0" onclick="showPage('learn')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('learn')}">Paediatric Care</span>
+      <span class="nav-link" role="menuitem" tabindex="0" onclick="showPage('appointments')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('appointments')}">Appointments</span>
+      <span class="nav-link nav-cta" role="menuitem" tabindex="0" onclick="showPage('appointments')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('appointments')}">Book Appointment</span>
+    </div>
+    <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu()}">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" role="menu" aria-hidden="true">
+    <span class="nav-link" role="menuitem" tabindex="0" onclick="showPage('home');toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('home');toggleMenu()}">Home</span>
+    <span class="nav-link" role="menuitem" tabindex="0" onclick="showPage('clinic');toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('clinic');toggleMenu()}">Clinic & Services</span>
+    <span class="nav-link" role="menuitem" tabindex="0" onclick="showPage('learn');toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('learn');toggleMenu()}">Paediatric Care</span>
+    <span class="nav-link" role="menuitem" tabindex="0" onclick="showPage('appointments');toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('appointments');toggleMenu()}">Appointments</span>
+    <span class="nav-link nav-cta" role="menuitem" tabindex="0" onclick="showPage('appointments');toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('appointments');toggleMenu()}">Book Appointment</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!--  HOME PAGE                                                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="page-home" class="page active">
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg-rings">
+        <div class="hero-ring hero-ring-1"></div>
+        <div class="hero-ring hero-ring-2"></div>
+        <div class="hero-ring hero-ring-3"></div>
+      </div>
+      <div class="hero-dots"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Belagavi, Karnataka &mdash; India
+          </div>
+          <h1 class="hero-h1">Gentle Hands,<em>Tiny Patients</em></h1>
+          <p class="hero-name">
+            <strong>Dr. Swapnil Annasaheb Pattanshetti</strong>
+            &nbsp;&mdash;&nbsp; MS &middot; MCh (PGIMER) &middot; FPESI
+          </p>
+          <p class="hero-desc">
+            Senior Paediatric Surgery &amp; Paediatric Urology consultant &mdash; dedicated to the surgical care of newborns, infants, children and adolescents with warmth, expertise, and a child-first approach.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-gold" onclick="showPage('appointments')">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              Book Appointment
+            </button>
+            <button class="btn-outline" onclick="showPage('clinic')">
+              View Services &rarr;
+            </button>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <div class="hero-img-bg"></div>
+          <div class="hero-silhouette">
+            <!-- Doctor hero photo. Drop a file at images/doctor-hero.jpg to use; otherwise the SVG silhouette below is shown as fallback. -->
+            <img class="hero-photo" src="images/doctor-hero.png?v=2" alt="Dr. Swapnil A. Pattanshetti, Paediatric Surgeon" onerror="this.style.display='none'" />
+            <!-- Doctor SVG silhouette (fallback) -->
+            <svg class="doctor-svg" viewBox="0 0 280 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Body/coat -->
+              <ellipse cx="140" cy="370" rx="90" ry="40" fill="rgba(233,216,253,0.08)"/>
+              <!-- Lab coat -->
+              <path d="M80 220 L60 400 H220 L200 220 L175 240 L140 250 L105 240 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(233,216,253,0.25)" stroke-width="1"/>
+              <!-- Coat lapels -->
+              <path d="M140 250 L115 230 L105 240 Z" fill="rgba(233,216,253,0.15)"/>
+              <path d="M140 250 L165 230 L175 240 Z" fill="rgba(233,216,253,0.15)"/>
+              <!-- Tie/shirt detail -->
+              <rect x="133" y="250" width="14" height="80" rx="3" fill="rgba(246,135,179,0.25)"/>
+              <!-- Stethoscope -->
+              <path d="M105 245 Q90 265 95 285 Q100 305 115 305 Q130 305 130 290" stroke="rgba(246,135,179,0.6)" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="130" cy="287" r="7" fill="none" stroke="rgba(246,135,179,0.6)" stroke-width="3"/>
+              <!-- Arms -->
+              <path d="M80 220 L55 310 Q50 320 60 325 L75 330 L95 270" fill="rgba(255,255,255,0.15)" stroke="rgba(233,216,253,0.2)" stroke-width="1"/>
+              <path d="M200 220 L225 310 Q230 320 220 325 L205 330 L185 270" fill="rgba(255,255,255,0.15)" stroke="rgba(233,216,253,0.2)" stroke-width="1"/>
+              <!-- Hand with clipboard -->
+              <rect x="205" y="290" width="30" height="40" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(233,216,253,0.3)" stroke-width="1"/>
+              <line x1="210" y1="300" x2="230" y2="300" stroke="rgba(233,216,253,0.5)" stroke-width="1.5"/>
+              <line x1="210" y1="308" x2="230" y2="308" stroke="rgba(233,216,253,0.5)" stroke-width="1.5"/>
+              <line x1="210" y1="316" x2="222" y2="316" stroke="rgba(233,216,253,0.5)" stroke-width="1.5"/>
+              <!-- Neck -->
+              <rect x="128" y="175" width="24" height="30" rx="6" fill="rgba(255,255,255,0.2)"/>
+              <!-- Head -->
+              <ellipse cx="140" cy="145" rx="42" ry="50" fill="rgba(255,255,255,0.2)" stroke="rgba(233,216,253,0.25)" stroke-width="1"/>
+              <!-- Hair -->
+              <path d="M98 135 Q98 95 140 95 Q182 95 182 135 Q175 105 140 105 Q105 105 98 135 Z" fill="rgba(107,70,193,0.5)"/>
+              <!-- Face features -->
+              <ellipse cx="127" cy="148" rx="5" ry="6" fill="rgba(255,255,255,0.4)"/>
+              <ellipse cx="153" cy="148" rx="5" ry="6" fill="rgba(255,255,255,0.4)"/>
+              <path d="M130 165 Q140 172 150 165" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Medical cross badge -->
+              <rect x="155" y="260" width="26" height="26" rx="6" fill="rgba(246,135,179,0.2)" stroke="rgba(246,135,179,0.4)" stroke-width="1"/>
+              <rect x="167" y="264" width="3" height="18" rx="1" fill="rgba(246,135,179,0.7)"/>
+              <rect x="160" y="271" width="18" height="3" rx="1" fill="rgba(246,135,179,0.7)"/>
+              <!-- Pocket detail -->
+              <rect x="88" y="255" width="20" height="25" rx="3" fill="rgba(233,216,253,0.1)" stroke="rgba(233,216,253,0.2)" stroke-width="1"/>
+              <line x1="93" y1="260" x2="103" y2="260" stroke="rgba(233,216,253,0.4)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="hero-card-float left">
+            <div class="hero-card-val">500<span>+</span></div>
+            <div class="hero-card-lab">Little Patients</div>
+          </div>
+          <div class="hero-card-float right">
+            <div class="hero-card-val">10<span>+</span></div>
+            <div class="hero-card-lab">Years Exp.</div>
+          </div>
+          <div class="hero-verified-badge">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            MCI Verified
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="hero-scroll-line"></div>
+        Scroll
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section id="stats">
+      <div class="stats-inner">
+        <div class="stat-item reveal">
+          <div class="stat-num"><span class="count" data-target="10">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-num"><span class="count" data-target="5">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Languages Spoken</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-num"><span class="count" data-target="500">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Children Treated</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-num" style="font-size:1.5rem; padding-top:4px;">
+            <svg viewBox="0 0 20 20" fill="#22C55E" width="22" height="22" style="display:inline;vertical-align:middle;margin-right:4px"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+            Verified
+          </div>
+          <div class="stat-label">MCI Registration</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="philosophy">
+      <div class="philosophy-inner">
+        <div class="philosophy-header reveal">
+          <div class="section-tag">The Physician</div>
+          <h2 class="section-heading">A Philosophy of Care</h2>
+          <p class="section-sub" style="margin:0 auto">A surgeon's hands are guided by a lifetime of training — but the outcome is shaped by the principles behind them.</p>
+        </div>
+
+        <div class="philosophy-quote reveal">
+          <svg class="quote-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 8C5 8 2 12 2 17v7h10V14H8c0-2 1-4 4-4zm18 0c-5 0-8 4-8 9v7h10V14h-4c0-2 1-4 4-4z"/></svg>
+          <blockquote>
+            Every child who walks or is carried through my door carries with them a whole family's hopes. Our job is to listen gently, explain honestly, and heal with the smallest possible intervention — so they can go back to being a kid.
+          </blockquote>
+          <cite>— Dr. Swapnil A. Pattanshetti</cite>
+        </div>
+
+        <div class="doctor-highlights">
+          <div class="dh-card reveal reveal-delay-1">
+            <div class="dh-icon dh-icon-navy">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg>
+            </div>
+            <h4>PGIMER Super-Specialist</h4>
+            <p>MCh Paediatric Surgery from the Postgraduate Institute of Medical Education &amp; Research, Chandigarh &mdash; India's top institute for paediatric surgical training.</p>
+          </div>
+          <div class="dh-card reveal reveal-delay-2">
+            <div class="dh-icon dh-icon-gold">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            </div>
+            <h4>10+ Years of Dedicated Practice</h4>
+            <p>Hundreds of paediatric surgical procedures performed &mdash; from delicate neonatal repairs to complex urological reconstructions and minimal-access surgery.</p>
+          </div>
+          <div class="dh-card reveal reveal-delay-3">
+            <div class="dh-icon dh-icon-blue">
+              <svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 00-3.6 2.2A3.5 3.5 0 005 8.5c0 .9.3 1.7.9 2.3A3.5 3.5 0 005 14c0 1.9 1.6 3.5 3.5 3.5.2 0 .4 0 .5-.1V21h2V6a2 2 0 014 0v15h2v-3.6c.1 0 .3.1.5.1A3.5 3.5 0 0020 14c0-1.2-.5-2.3-1.3-3.1.5-.6.8-1.4.8-2.4A3.5 3.5 0 0016 5.2 4 4 0 0012 3z"/></svg>
+            </div>
+            <h4>Full-Spectrum Paediatric Surgery</h4>
+            <p>Neonatal anomalies, paediatric urology, GI, thoracic, and solid tumour surgery &mdash; a complete scope of children's surgical care.</p>
+          </div>
+          <div class="dh-card reveal reveal-delay-4">
+            <div class="dh-icon dh-icon-navy">
+              <svg viewBox="0 0 24 24"><path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/></svg>
+            </div>
+            <h4>Minimal-Access Surgery</h4>
+            <p>Advanced paediatric laparoscopy and thoracoscopy &mdash; tiny incisions, less pain, faster return to school and play.</p>
+          </div>
+          <div class="dh-card reveal reveal-delay-5">
+            <div class="dh-icon dh-icon-gold">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h4>Child-First Approach</h4>
+            <p>Specialises in making children feel comfortable and explaining procedures in ways they &mdash; and their parents &mdash; can understand.</p>
+          </div>
+          <div class="dh-card reveal reveal-delay-6">
+            <div class="dh-icon dh-icon-blue">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17H7v-7h2zm4 0h-2V7h2zm4 0h-2v-4h2z"/></svg>
+            </div>
+            <h4>Antenatal Counselling</h4>
+            <p>Guidance for expectant parents when congenital anomalies are detected on scans &mdash; clarity, planning, and reassurance from before birth.</p>
+          </div>
+        </div>
+
+        <a href="documents/certificate.pdf" target="_blank" rel="noopener" class="credential-card reveal">
+          <div class="credential-seal" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 4l5 4h6l2 6 5 4-2 6 2 6-5 4-2 6h-6l-5 4-5-4h-6l-2-6-5-4 2-6-2-6 5-4 2-6h6l5-4zm-2 18l-4 4 2 2 2-2v8h4v-8l2 2 2-2-4-4-4 0z"/></svg>
+          </div>
+          <div class="credential-body">
+            <div class="credential-label">Verified Credentials</div>
+            <h4>MCh Paediatric Surgery &middot; PGIMER &middot; FPESI</h4>
+            <p>Super-specialty qualification from PGIMER Chandigarh and Fellowship of the Paediatric Endoscopic Surgeons of India.</p>
+          </div>
+          <div class="credential-cta">
+            View Certificate
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- WHY PAEDIATRIC SURGERY? -->
+    <section id="why-peds">
+      <div class="why-peds-inner">
+        <div class="why-peds-header reveal">
+          <div class="section-tag">A Different Kind of Surgery</div>
+          <h2 class="section-heading">Why Paediatric Surgery?</h2>
+          <p class="section-sub" style="margin:0 auto">Children are not small adults. Their bodies, emotions, and surgical needs are fundamentally different &mdash; and that is why paediatric surgery exists as a dedicated super-specialty.</p>
+        </div>
+
+        <div class="why-peds-grid">
+          <div class="why-peds-card reveal reveal-delay-1">
+            <div class="why-peds-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm2 16h-4v-1h4v1z"/></svg>
+            </div>
+            <h4>Tiny Anatomy, Tiny Instruments</h4>
+            <p>A newborn's blood vessels are thinner than a strand of thread; an infant's intestine is fragile as tissue paper. Paediatric surgeons use miniature instruments and magnification techniques designed exclusively for children.</p>
+          </div>
+
+          <div class="why-peds-card reveal reveal-delay-2">
+            <div class="why-peds-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5zm0 12c-3.87 0-7 3.13-7 7h14c0-3.87-3.13-7-7-7z"/></svg>
+            </div>
+            <h4>Growing Bodies, Different Physiology</h4>
+            <p>A child's metabolism, fluid balance, drug dosing, and healing response are all unique. Paediatric surgery is calibrated for bodies that are still developing &mdash; not scaled-down adult surgery.</p>
+          </div>
+
+          <div class="why-peds-card reveal reveal-delay-3">
+            <div class="why-peds-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h4>Emotional &amp; Developmental Needs</h4>
+            <p>A child fears the unknown, and a parent fears for their child. A paediatric surgeon is trained to communicate with both &mdash; gently, clearly, and in ways that respect the child's dignity at every age.</p>
+          </div>
+
+          <div class="why-peds-card reveal reveal-delay-4">
+            <div class="why-peds-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            </div>
+            <h4>Congenital &amp; Lifelong Conditions</h4>
+            <p>Many paediatric conditions &mdash; hypospadias, hernias, undescended testis, Hirschsprung's, congenital malformations &mdash; simply do not occur in adults. They require specific training a general surgeon cannot substitute.</p>
+          </div>
+
+          <div class="why-peds-card reveal reveal-delay-5">
+            <div class="why-peds-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <h4>Recovery That Protects Growth</h4>
+            <p>Surgery in a child must protect not just today's outcome but years of future growth &mdash; bones, organs, continence, fertility. Every decision is made with the adult they will become in mind.</p>
+          </div>
+
+          <div class="why-peds-card reveal reveal-delay-6">
+            <div class="why-peds-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 100 22 11 11 0 000-22zm0 20a9 9 0 110-18 9 9 0 010 18zm1-14h-2v6l5.25 3.15.75-1.23-4-2.42z"/></svg>
+            </div>
+            <h4>Why Not a General Surgeon?</h4>
+            <p>A general surgeon's training is centred on adult disease. Paediatric surgery is an entirely separate super-specialty &mdash; with its own exams, instruments, protocols, and years of dedicated training (MCh &amp; fellowship) beyond general surgery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section id="why">
+      <div class="why-inner">
+        <div class="why-header reveal">
+          <div class="section-tag">Why Dr. Swapnil</div>
+          <h2 class="section-heading">Care Built Around Your Child</h2>
+          <p class="section-sub">Every child deserves warmth, clear explanations, and world-class surgical care. These are the principles that guide our practice.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z"/></svg>
+            </div>
+            <h4>Transparency</h4>
+            <p>Clear communication with parents about the diagnosis, options, risks, and expected outcomes &mdash; in Kannada, English, Hindi, Marathi or Telugu.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h4>Kid-Friendly Approach</h4>
+            <p>Gentle explanations, playful distractions, and calm reassurance &mdash; making the hospital visit feel as un-scary as possible.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-3">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h4>Surgical Excellence</h4>
+            <p>A commitment to precision and clinical rigour refined over 10+ years of dedicated paediatric surgical practice.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-4">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/></svg>
+            </div>
+            <h4>Advanced Techniques</h4>
+            <p>Minimal-access laparoscopy and thoracoscopy, paediatric urology reconstruction, and complex neonatal surgery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION TIMELINE -->
+    <section id="education">
+      <div class="edu-inner">
+        <div class="edu-header reveal">
+          <div class="section-tag">Qualifications</div>
+          <h2 class="section-heading">Academic Foundation</h2>
+          <p class="section-sub" style="margin:0 auto">A distinguished medical education at one of India's premier institutions, building expertise layer by layer.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal reveal-delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">MBBS</div>
+            <div class="timeline-card">
+              <h4>Bachelor of Medicine, Bachelor of Surgery</h4>
+              <div class="timeline-inst">Foundation in Medicine &amp; Surgery</div>
+              <div class="timeline-badge">Foundation</div>
+            </div>
+          </div>
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">MS</div>
+            <div class="timeline-card">
+              <h4>Master of Surgery — General Surgery</h4>
+              <div class="timeline-inst">Broad-based surgical training in general surgical principles</div>
+              <div class="timeline-badge">Surgical Specialisation</div>
+            </div>
+          </div>
+          <div class="timeline-item reveal reveal-delay-3">
+            <div class="timeline-dot" style="background: var(--navy); box-shadow: 0 0 0 3px rgba(107,70,193,0.2);"></div>
+            <div class="timeline-year" style="background: linear-gradient(135deg, var(--navy), #805AD5);">MCh</div>
+            <div class="timeline-card" style="border-left-color: var(--navy);">
+              <h4>MCh Paediatric Surgery &mdash; PGIMER Chandigarh</h4>
+              <div class="timeline-inst">Postgraduate Institute of Medical Education &amp; Research &mdash; India's premier paediatric surgical training programme. Senior Resident.</div>
+              <div class="timeline-badge" style="background: rgba(107,70,193,0.1);">Super-Specialisation &middot; Paediatric Surgery</div>
+            </div>
+          </div>
+          <div class="timeline-item reveal reveal-delay-4">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">FPESI</div>
+            <div class="timeline-card">
+              <h4>Fellowship &mdash; Paediatric Endoscopic Surgeons of India</h4>
+              <div class="timeline-inst">Advanced training in paediatric minimal-access surgery &mdash; laparoscopy &amp; thoracoscopy.</div>
+              <div class="timeline-badge">Fellowship</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER for home page -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="nav-logo" style="margin-bottom:16px">
+              <div class="nav-logo-icon">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C9.8 2 8 3.8 8 6v2H4v14h16V8h-4V6c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2h-4V6c0-1.1.9-2 2-2zm1 10v2h-2v-2H9v-2h2v-2h2v2h2v2h-2z"/></svg>
+              </div>
+              <div class="nav-logo-text">
+                <div class="nav-logo-name">Dr. Swapnil A. Pattanshetti</div>
+                <div class="nav-logo-title">Paediatric Surgeon & Urologist</div>
+              </div>
+            </div>
+            <p>Dedicated to the surgical care of newborns, children and adolescents with warmth, expertise, and a child-first approach at KLES Dr. Prabhakar Kore Hospital, Belagavi.</p>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#" onclick="showPage('home')">Home</a></li>
+              <li><a href="#" onclick="showPage('clinic')">Conditions Treated</a></li>
+              <li><a href="#" onclick="showPage('clinic')">Procedures</a></li>
+              <li><a href="#" onclick="showPage('appointments')">Book Appointment</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener">KLES Dr. Prabhakar Kore Hospital</a></li>
+              <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener">Nehru Nagar, Belagavi</a></li>
+              <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener">Belagavi, Karnataka Nehru Nagar, Belagavi &mdash; 590016mdash; 590010</a></li>
+              <li>Tue &amp; Thu: 9 AM &ndash; 5 PM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2025 Dr. Swapnil A. Pattanshetti. All rights reserved.</span>
+          <span>KLES Dr. Prabhakar Kore Hospital, Belagavi</span>
+        </div>
+      </div>
+    </footer>
+  </div><!-- /page-home -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!--  CLINIC PAGE                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="page-clinic" class="page">
+
+    <div class="clinic-hero">
+      <div class="section-tag" style="margin-bottom:20px">Paediatric Surgery &amp; Urology</div>
+      <h1>Conditions We Treat</h1>
+      <p>A comprehensive range of paediatric surgical conditions &mdash; from neonatal anomalies to adolescent urology &mdash; managed with clinical precision and gentle care.</p>
+    </div>
+
+    <section id="conditions">
+      <div class="conditions-inner">
+        <div class="conditions-header reveal">
+          <div class="section-tag">Clinical Focus</div>
+          <h2 class="section-heading">Conditions Seen by a Paediatric Surgeon</h2>
+          <p class="section-sub" style="margin:0 auto">Each child is approached with a thorough diagnostic workup, personalised treatment planning, and compassionate post-operative follow-through for the whole family.</p>
+        </div>
+        <div class="conditions-grid">
+
+          <div class="condition-card reveal reveal-delay-1">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <h4>Hypospadias</h4>
+            <p>Reconstruction of the urethral opening in newborn boys. Corrective surgery typically performed between 6&ndash;18 months for optimal outcomes.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-2">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            </div>
+            <h4>Inguinal &amp; Umbilical Hernia</h4>
+            <p>Laparoscopic and open hernia repair in infants and children &mdash; one of the most common and rewarding paediatric surgeries.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-3">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 10.5c0 2.5-2 4.5-4 4.5s-4-2-4-4.5 1.5-4.5 4-4.5 4 2 4 4.5z"/></svg>
+            </div>
+            <h4>Undescended Testis</h4>
+            <p>Orchidopexy &mdash; laparoscopic or open surgical placement of the testis into the scrotum to protect fertility and reduce cancer risk.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-1">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.85 2.92 7.21 5 9.88 2.11-2.69 5-7 5-9.88 0-2.76-2.24-5-5-5zm0 22s-8-7.58-8-14a8 8 0 0116 0c0 6.42-8 14-8 14z"/></svg>
+            </div>
+            <h4>Circumcision &amp; Tongue-Tie Release</h4>
+            <p>Routine paediatric day-care procedures performed under safe anaesthesia, with focus on comfort and quick recovery.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-2">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-13h2v5h3l-4 5-4-5h3z"/></svg>
+            </div>
+            <h4>Neonatal Congenital Anomalies</h4>
+            <p>Complex surgery for oesophageal atresia, anorectal malformations, Hirschsprung's disease, diaphragmatic hernia and more &mdash; in newborns within days of life.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-3">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v3H5a2 2 0 00-2 2v10h18V12a2 2 0 00-2-2h-2V7a5 5 0 00-5-5zm-3 8V7a3 3 0 016 0v3H9z"/></svg>
+            </div>
+            <h4>Paediatric Urology</h4>
+            <p>Pyeloplasty for PUJ obstruction, ureteric re-implantation for reflux, cystoscopy, and neurogenic bladder management.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-1">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 00-3.6 2.2A3.5 3.5 0 005 8.5c0 .9.3 1.7.9 2.3A3.5 3.5 0 005 14c0 1.9 1.6 3.5 3.5 3.5.2 0 .4 0 .5-.1V21h2V6a2 2 0 014 0v15h2v-3.6c.1 0 .3.1.5.1A3.5 3.5 0 0020 14c0-1.2-.5-2.3-1.3-3.1.5-.6.8-1.4.8-2.4A3.5 3.5 0 0016 5.2 4 4 0 0012 2z"/></svg>
+            </div>
+            <h4>Hydrocephalus &amp; Spina Bifida</h4>
+            <p>V-P shunt placement for hydrocephalus and repair of meningomyelocele &mdash; protecting the developing brain and spinal cord.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-2">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 00-4 4v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-2V8a4 4 0 00-4-4zm-2 6V8a2 2 0 014 0v2h-4z"/></svg>
+            </div>
+            <h4>Appendicitis &amp; Acute Abdomen</h4>
+            <p>Laparoscopic appendicectomy and management of intussusception, volvulus, and other paediatric surgical emergencies.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-3">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-7.07 17.07A10 10 0 0012 22a10 10 0 007.07-2.93A10 10 0 0022 12a10 10 0 00-2.93-7.07A10 10 0 0012 2zm0 4a6 6 0 016 6 6 6 0 01-6 6 6 6 0 01-6-6 6 6 0 016-6z"/></svg>
+            </div>
+            <h4>Gall Bladder &amp; Liver Disease</h4>
+            <p>Laparoscopic cholecystectomy, choledochal cyst excision, and liver surgery for children &mdash; using minimal access techniques.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-1">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V13H5V6.3l7-2.61v9.3z"/></svg>
+            </div>
+            <h4>Paediatric Solid Tumours</h4>
+            <p>Surgical management of Wilms' tumour, neuroblastoma, hepatoblastoma, and other childhood malignancies in coordination with oncology.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-2">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6h-3V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2zM9 4h6v2H9V4zm4 11h-2v3h-2v-3H6v-2h3v-3h2v3h2v2z"/></svg>
+            </div>
+            <h4>Foreign Body Removal</h4>
+            <p>Urgent endoscopic removal of foreign bodies (coins, batteries, toys) from the windpipe and food pipe &mdash; a true paediatric emergency.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+          <div class="condition-card reveal reveal-delay-3">
+            <div class="condition-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 12h-4v4h-2v-4H7v-2h4V8h2v4h4v2z"/></svg>
+            </div>
+            <h4>Antenatal Counselling</h4>
+            <p>Guidance for expectant parents when prenatal scans suggest a congenital anomaly &mdash; what it means, what to expect, and how surgery will help.</p>
+            <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCEDURES -->
+    <section id="procedures">
+      <div class="procedures-inner">
+        <div class="procedures-header reveal">
+          <div class="section-tag">Surgical Expertise</div>
+          <h2 class="section-heading">Procedures Performed</h2>
+        </div>
+        <div class="procedures-strip">
+          <div class="procedure-tile reveal reveal-delay-1">
+            <div class="procedure-tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a9 9 0 100 18A9 9 0 0012 2zm0 2a7 7 0 110 14A7 7 0 0112 4zm0 1.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+            </div>
+            <h4>Paediatric Laparoscopy</h4>
+            <p>Appendicectomy, cholecystectomy, pyeloplasty, nephrectomy, orchidopexy &mdash; minimal-access surgery for children.</p>
+          </div>
+          <div class="procedure-tile reveal reveal-delay-2">
+            <div class="procedure-tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 2c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.14-7-7 3.14-7 7-7zm-1.5 4.5v5l4 2.5-.75-1.23-2.75-1.69V9.5H10.5z"/></svg>
+            </div>
+            <h4>Neonatal Surgery</h4>
+            <p>Complex surgical correction of congenital anomalies in newborns &mdash; oesophageal, anorectal, abdominal wall and intestinal.</p>
+          </div>
+          <div class="procedure-tile reveal reveal-delay-3">
+            <div class="procedure-tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5V2.05z"/></svg>
+            </div>
+            <h4>Paediatric Urology</h4>
+            <p>Hypospadias repair, pyeloplasty, ureteric re-implantation, cystoscopy, and neurogenic bladder management.</p>
+          </div>
+          <div class="procedure-tile reveal reveal-delay-4">
+            <div class="procedure-tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14v-8z"/></svg>
+            </div>
+            <h4>VATS &amp; Thoracoscopy</h4>
+            <p>Video-assisted thoracic surgery for empyema, lung and chest wall conditions &mdash; small scars, fast recovery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="nav-logo" style="margin-bottom:16px">
+              <div class="nav-logo-icon">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C9.8 2 8 3.8 8 6v2H4v14h16V8h-4V6c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2h-4V6c0-1.1.9-2 2-2zm1 10v2h-2v-2H9v-2h2v-2h2v2h2v2h-2z"/></svg>
+              </div>
+              <div class="nav-logo-text">
+                <div class="nav-logo-name">Dr. Swapnil A. Pattanshetti</div>
+                <div class="nav-logo-title">Paediatric Surgeon & Urologist</div>
+              </div>
+            </div>
+            <p>Dedicated to the surgical care of newborns, children and adolescents with warmth, expertise, and a child-first approach at KLES Dr. Prabhakar Kore Hospital, Belagavi.</p>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#" onclick="showPage('home')">Home</a></li>
+              <li><a href="#" onclick="showPage('clinic')">Conditions Treated</a></li>
+              <li><a href="#" onclick="showPage('appointments')">Book Appointment</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener">KLES Dr. Prabhakar Kore Hospital</a></li>
+              <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener">Nehru Nagar, Belagavi</a></li>
+              <li>Tue &amp; Thu: 9 AM &ndash; 5 PM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2025 Dr. Swapnil A. Pattanshetti. All rights reserved.</span>
+          <span>KLES Dr. Prabhakar Kore Hospital, Belagavi</span>
+        </div>
+      </div>
+    </footer>
+  </div><!-- /page-clinic -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!--  APPOINTMENTS PAGE                                           -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="page-appointments" class="page">
+
+    <div class="appt-hero">
+      <div class="section-tag" style="margin-bottom:20px">Schedule a Visit</div>
+      <h1>Book an Appointment</h1>
+      <p>Complete the form below and our team will confirm your consultation within 24 hours.</p>
+    </div>
+
+    <div id="appt-main">
+      <div class="appt-inner">
+
+        <!-- BOOKING FORM -->
+        <div class="appt-form-card reveal">
+          <h2>Request a Consultation</h2>
+          <p class="form-sub">All fields marked are required. Your information is kept strictly confidential.</p>
+
+          <form id="booking-form" action="https://formsubmit.co/swapnil.pattanshetti.peds@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Appointment Request — Dr. Swapnil Website" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Full Name *</label>
+                <input type="text" id="f-name" name="Full Name" placeholder="e.g. Anil Kumar Sharma" required />
+              </div>
+              <div class="form-group">
+                <label for="f-email">Email Address *</label>
+                <input type="email" id="f-email" name="Email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f-date">Preferred Date *</label>
+              <input type="date" id="f-date" name="Preferred Date" required />
+            </div>
+            <div class="form-group">
+              <label for="f-message">Symptoms / Message *</label>
+              <textarea id="f-message" name="Symptoms / Message" placeholder="Please describe your child's symptoms, age, relevant medical history, and any concerns you'd like Dr. Swapnil to know before the consultation..." required></textarea>
+            </div>
+            <div id="form-error" role="alert"></div>
+            <button type="submit" class="btn-submit">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              Confirm Appointment Request
+            </button>
+          </form>
+
+          <div id="form-success">
+            <div class="success-checkmark">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h3>Request Received!</h3>
+            <p>Thank you for reaching out. Our team will contact you within <strong>24 hours</strong> to confirm your appointment with Dr. Swapnil.</p>
+          </div>
+        </div>
+
+        <!-- CLINIC INFO -->
+        <div class="reveal reveal-delay-2">
+          <div class="clinic-info-card">
+            <div class="map-placeholder">
+              <div class="map-pin">
+                <div class="map-pin-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>KLES Dr. Prabhakar Kore Hospital</span>
+              </div>
+            </div>
+            <div class="clinic-info-body">
+              <h3>KLES Dr. Prabhakar Kore Hospital</h3>
+              <div class="clinic-tagline">Paediatric Surgery &middot; Paediatric Urology &middot; Neonatal Surgery</div>
+
+              <a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener" class="clinic-detail clinic-detail-link">
+                <div class="clinic-detail-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div>
+                  <div class="clinic-detail-label">Address &middot; Open in Google Maps</div>
+                  <div class="clinic-detail-text">KLES Dr. Prabhakar Kore Hospital &amp; MRC,<br>Nehru Nagar, Belagavi, Karnataka &mdash; 590010</div>
+                </div>
+              </a>
+
+              <div class="clinic-hours">
+                <div class="hours-row">
+                  <span class="hours-day">Tuesday</span>
+                  <span class="hours-time">9:00 AM &ndash; 5:00 PM</span>
+                </div>
+                <div class="hours-row">
+                  <span class="hours-day">Thursday</span>
+                  <span class="hours-time">9:00 AM &ndash; 5:00 PM</span>
+                </div>
+                <div class="hours-row">
+                  <span class="hours-day">Other Days</span>
+                  <span class="hours-time" style="color:var(--text-l)">By Appointment</span>
+                </div>
+                <div style="margin-top:16px">
+                  <span class="hours-badge">OPD Days: Tue &amp; Thu</span>
+                </div>
+                <div style="margin-top:14px; padding-top:14px; border-top:1px dashed rgba(107,70,193,0.15); font-size:0.82rem; color:var(--text-l); line-height:1.6;">
+                  <strong style="color:var(--navy);">Languages:</strong> Kannada, Telugu, English, Hindi, Marathi
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust badges -->
+          <div style="margin-top: 20px; background: white; border-radius: 16px; padding: 20px 24px; box-shadow: var(--shadow);">
+            <div style="font-size:0.75rem; font-weight:700; color:var(--text-l); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">Credentials & Registration</div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; align-items:center; gap:10px; font-size:0.87rem; color:var(--text);">
+                <svg viewBox="0 0 20 20" fill="#22C55E" width="18" height="18"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                MCI Registered — Verified Specialist
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; font-size:0.87rem; color:var(--text);">
+                <svg viewBox="0 0 20 20" fill="#22C55E" width="18" height="18"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                MCh Paediatric Surgery — PGIMER Chandigarh
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; font-size:0.87rem; color:var(--text);">
+                <svg viewBox="0 0 20 20" fill="#22C55E" width="18" height="18"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                FPESI — Paediatric Endoscopic Surgeons of India
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="nav-logo" style="margin-bottom:16px">
+              <div class="nav-logo-icon">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C9.8 2 8 3.8 8 6v2H4v14h16V8h-4V6c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2h-4V6c0-1.1.9-2 2-2zm1 10v2h-2v-2H9v-2h2v-2h2v2h2v2h-2z"/></svg>
+              </div>
+              <div class="nav-logo-text">
+                <div class="nav-logo-name">Dr. Swapnil A. Pattanshetti</div>
+                <div class="nav-logo-title">Paediatric Surgeon & Urologist</div>
+              </div>
+            </div>
+            <p>Dedicated to the surgical care of newborns, children and adolescents with warmth, expertise, and a child-first approach at KLES Dr. Prabhakar Kore Hospital, Belagavi.</p>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#" onclick="showPage('home')">Home</a></li>
+              <li><a href="#" onclick="showPage('clinic')">Conditions Treated</a></li>
+              <li><a href="#" onclick="showPage('appointments')">Book Appointment</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener">KLES Dr. Prabhakar Kore Hospital</a></li>
+              <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=KLES+Dr+Prabhakar+Kore+Hospital+MRC,+Nehru+Nagar,+Belagavi,+Karnataka+590010" target="_blank" rel="noopener">Nehru Nagar, Belagavi</a></li>
+              <li>Tue &amp; Thu: 9 AM &ndash; 5 PM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2025 Dr. Swapnil A. Pattanshetti. All rights reserved.</span>
+          <span>KLES Dr. Prabhakar Kore Hospital, Belagavi</span>
+        </div>
+      </div>
+    </footer>
+  </div><!-- /page-appointments -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!--  LEARN PAGE — NEUROSURGERY GUIDE                             -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div id="page-learn" class="page">
+
+    <!-- ─── HERO + ANATOMY NAVIGATOR ─── -->
+    <section class="learn-hero">
+      <div class="section-tag" style="background:rgba(246,135,179,0.18); border-color:rgba(246,135,179,0.4); color:var(--gold)">Family Education Hub</div>
+      <h1>Understanding Paediatric Surgery</h1>
+      <p>A warm, visual guide to the conditions we see most often in a paediatric surgery practice &mdash; what they are, how they present, how they're diagnosed, and the gentle modern techniques we use to treat them.</p>
+
+      <div class="anatomy-nav reveal">
+        <!-- Anatomy silhouette with interactive hotspots -->
+        <div class="anatomy-diagram" role="group" aria-label="Interactive body anatomy navigator">
+          <svg viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(233,216,253,0.22)"/>
+                <stop offset="100%" stop-color="rgba(233,216,253,0.06)"/>
+              </linearGradient>
+            </defs>
+            <!-- head -->
+            <ellipse cx="50" cy="18" rx="14" ry="16" fill="url(#bodyGrad)" stroke="rgba(233,216,253,0.4)" stroke-width="1"/>
+            <!-- neck -->
+            <rect x="44" y="32" width="12" height="8" fill="url(#bodyGrad)" stroke="rgba(233,216,253,0.4)" stroke-width="1"/>
+            <!-- torso -->
+            <path d="M30,42 Q50,36 70,42 L74,110 Q50,118 26,110 Z" fill="url(#bodyGrad)" stroke="rgba(233,216,253,0.4)" stroke-width="1"/>
+            <!-- arms -->
+            <path d="M30,44 Q18,52 14,90 Q13,118 18,140" fill="none" stroke="rgba(233,216,253,0.4)" stroke-width="7" stroke-linecap="round" opacity="0.65"/>
+            <path d="M70,44 Q82,52 86,90 Q87,118 82,140" fill="none" stroke="rgba(233,216,253,0.4)" stroke-width="7" stroke-linecap="round" opacity="0.65"/>
+            <!-- legs -->
+            <path d="M38,114 Q34,160 33,205" fill="none" stroke="rgba(233,216,253,0.4)" stroke-width="10" stroke-linecap="round" opacity="0.65"/>
+            <path d="M62,114 Q66,160 67,205" fill="none" stroke="rgba(233,216,253,0.4)" stroke-width="10" stroke-linecap="round" opacity="0.65"/>
+            <!-- spine indicator -->
+            <line x1="50" y1="44" x2="50" y2="108" stroke="rgba(213,63,140,0.45)" stroke-width="1.5" stroke-dasharray="2,2"/>
+          </svg>
+
+          <div class="anatomy-hotspot anatomy-hotspot-brain" data-cat="brain" role="button" tabindex="0" aria-label="Filter brain conditions" title="Brain">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 3a4 4 0 00-3.6 2.2A3.5 3.5 0 005 8.5c0 .9.3 1.7.9 2.3A3.5 3.5 0 005 14c0 1.9 1.6 3.5 3.5 3.5.2 0 .4 0 .5-.1V21h2V6c.3-.1.5-.2.8-.3A2 2 0 0112 5a2 2 0 012 2v14h2v-3.6c.1 0 .3.1.5.1A3.5 3.5 0 0020 14c0-1.2-.5-2.3-1.3-3.1.5-.6.8-1.4.8-2.4A3.5 3.5 0 0016 5.2 4 4 0 0012 3z"/></svg>
+          </div>
+          <div class="anatomy-hotspot anatomy-hotspot-cerebro" data-cat="vascular" role="button" tabindex="0" aria-label="Filter vascular conditions" title="Vascular">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2l-1.5 4.5L6 8l4.5 1.5L12 14l1.5-4.5L18 8l-4.5-1.5zM6 14l-.75 2.25L3 17l2.25.75L6 20l.75-2.25L9 17l-2.25-.75zm12 0l-.75 2.25L15 17l2.25.75L18 20l.75-2.25L21 17l-2.25-.75z"/></svg>
+          </div>
+          <div class="anatomy-hotspot anatomy-hotspot-spine" data-cat="spine" role="button" tabindex="0" aria-label="Filter spine conditions" title="Spine">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M10 2h4v3h-4zM9 6h6v2H9zm-1 3h8v2H8zm-.5 3h9v2h-9zm1 3h7v2H8.5zm1 3h5v2h-5zm1 3h3v2h-3z"/></svg>
+          </div>
+          <div class="anatomy-hotspot anatomy-hotspot-nerve" data-cat="nerve" role="button" tabindex="0" aria-label="Filter nerve conditions" title="Nerve">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M13 2l-2 5h3l-2 5h4l-6 10 2-7H9l2-6H7z"/></svg>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="anatomy-legend" role="list">
+          <div class="anatomy-legend-item" data-cat="brain" role="listitem" tabindex="0">
+            <span class="anatomy-legend-dot" style="background:#805AD5"></span>
+            <span class="anatomy-legend-text">Head &amp; Neural <span>Hydrocephalus · Meningomyelocele</span></span>
+          </div>
+          <div class="anatomy-legend-item" data-cat="spine" role="listitem" tabindex="0">
+            <span class="anatomy-legend-dot" style="background:#D53F8C"></span>
+            <span class="anatomy-legend-text">Abdomen <span>Hernia · Appendicitis · GI anomalies</span></span>
+          </div>
+          <div class="anatomy-legend-item" data-cat="nerve" role="listitem" tabindex="0">
+            <span class="anatomy-legend-dot" style="background:#38B2AC"></span>
+            <span class="anatomy-legend-text">Paediatric Urology <span>Hypospadias · UDT · PUJ</span></span>
+          </div>
+          <div class="anatomy-legend-item" data-cat="vascular" role="listitem" tabindex="0">
+            <span class="anatomy-legend-dot" style="background:#ED8936"></span>
+            <span class="anatomy-legend-text">Neonatal <span>TEF · ARM · Diaphragm hernia</span></span>
+          </div>
+          <div class="anatomy-legend-item" data-cat="trauma" role="listitem" tabindex="0">
+            <span class="anatomy-legend-dot" style="background:#F687B3"></span>
+            <span class="anatomy-legend-text">Thoracic &amp; Oncology <span>VATS · Solid tumours</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATS STRIP ─── -->
+    <div class="ns-stats-strip">
+      <div class="ns-stats-inner">
+        <div class="ns-stat">
+          <div class="ns-stat-val"><span class="count" data-target="12">0</span><span>+</span></div>
+          <div class="ns-stat-lbl">Condition Guides</div>
+        </div>
+        <div class="ns-stat">
+          <div class="ns-stat-val"><span class="count" data-target="10">0</span><span>+</span></div>
+          <div class="ns-stat-lbl">Years of Practice</div>
+        </div>
+        <div class="ns-stat">
+          <div class="ns-stat-val"><span class="count" data-target="500">0</span><span>+</span></div>
+          <div class="ns-stat-lbl">Children Treated</div>
+        </div>
+        <div class="ns-stat">
+          <div class="ns-stat-val"><span class="count" data-target="5">0</span><span></span></div>
+          <div class="ns-stat-lbl">Languages Spoken</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION HEAD ─── -->
+    <div class="ns-section-head reveal">
+      <div class="section-tag">Conditions &amp; Treatments</div>
+      <h2>Common Paediatric Surgical Conditions</h2>
+      <p>Tap any card to explore what the condition is, how it shows up, how it's diagnosed, and the step-by-step surgical approach. Use the filters below to narrow by body region.</p>
+    </div>
+
+    <!-- ─── FILTER CHIPS ─── -->
+    <div class="ns-filter-bar reveal">
+      <span class="ns-filter-label">Filter</span>
+      <button class="ns-chip active" data-cat="all" type="button">All Conditions</button>
+      <button class="ns-chip" data-cat="brain" type="button">Head &amp; Neural</button>
+      <button class="ns-chip" data-cat="spine" type="button">Abdomen</button>
+      <button class="ns-chip" data-cat="nerve" type="button">Urology</button>
+      <button class="ns-chip" data-cat="vascular" type="button">Neonatal</button>
+      <button class="ns-chip" data-cat="trauma" type="button">Thoracic &amp; Oncology</button>
+    </div>
+
+    <!-- ─── ACCORDION ─── -->
+    <div class="ns-accordion">
+
+      <!-- 1. Hypospadias -->
+      <div class="ns-card reveal" data-cat="nerve" data-idx="1">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-nerve">
+            <svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.85 2.92 7.21 5 9.88 2.11-2.69 5-7 5-9.88 0-2.76-2.24-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+          </div>
+          <div class="ns-card-meta">
+            <h3>Hypospadias</h3>
+            <p>A congenital condition in boys where the opening of the urinary passage is not at the tip of the penis.</p>
+          </div>
+          <span class="ns-card-badge badge-nerve">Urology</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs" role="tablist">
+            <button class="ns-tab active" data-tab="overview" type="button" role="tab">Overview</button>
+            <button class="ns-tab" data-tab="symptoms" type="button" role="tab">Signs</button>
+            <button class="ns-tab" data-tab="diagnosis" type="button" role="tab">Diagnosis</button>
+            <button class="ns-tab" data-tab="treatment" type="button" role="tab">Treatment</button>
+          </div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="overview">
+              <div class="ns-overview-grid">
+                <div class="ns-overview-text">
+                  <p>Hypospadias is one of the most common birth defects in boys &mdash; occurring in roughly <strong>1 in 200&ndash;300 male births</strong>. The urethral opening is located on the underside of the penis, ranging from mild (just below the tip) to severe (near the scrotum).</p>
+                  <div class="ns-quick-facts">
+                    <div class="ns-qf"><div class="ns-qf-val">1:250</div><div class="ns-qf-key">Incidence</div></div>
+                    <div class="ns-qf"><div class="ns-qf-val">6&ndash;18 m</div><div class="ns-qf-key">Ideal Age</div></div>
+                    <div class="ns-qf"><div class="ns-qf-val">Day-case</div><div class="ns-qf-key">In most cases</div></div>
+                  </div>
+                  <div class="ns-severity"><span class="ns-severity-lbl">Complexity</span><div class="ns-sev-track"><div class="ns-sev-fill" style="width:55%"></div></div></div>
+                </div>
+                <div class="ns-fact-box">
+                  <h5>At A Glance</h5>
+                  <div class="ns-fact"><span class="ns-fact-num">1.</span><span class="ns-fact-desc">Ideal timing for surgery is between 6 and 18 months of age.</span></div>
+                  <div class="ns-fact"><span class="ns-fact-num">2.</span><span class="ns-fact-desc">Do NOT circumcise before consulting a paediatric surgeon &mdash; the foreskin is used for reconstruction.</span></div>
+                  <div class="ns-fact"><span class="ns-fact-num">3.</span><span class="ns-fact-desc">Most boys void standing and have normal function after surgery.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="ns-panel" data-tab="symptoms">
+              <div class="ns-symptom-grid">
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z"/></svg></span>Urinary opening not at the tip</div>
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg></span>Downward curve (chordee)</div>
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><path d="M12 2a9 9 0 019 9c0 6-9 13-9 13S3 17 3 11a9 9 0 019-9z"/></svg></span>Abnormal foreskin (hooded)</div>
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 3 1 5 3 7l6 4 6-4c2-2 3-4 3-7 0-5-4-9-9-9z"/></svg></span>Abnormal urine stream direction</div>
+              </div>
+            </div>
+            <div class="ns-panel" data-tab="diagnosis">
+              <div class="ns-diag-list">
+                <div class="ns-diag-item"><div class="ns-diag-icon"><svg viewBox="0 0 24 24"><path d="M9 2a7 7 0 015.3 11.6l5.1 5.1-1.4 1.4-5.1-5.1A7 7 0 119 2z"/></svg></div><div class="ns-diag-text"><h6>Clinical Examination</h6><p>Usually diagnosed at birth or at the first paediatric check-up. No other tests needed for routine cases.</p></div></div>
+                <div class="ns-diag-item"><div class="ns-diag-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"/></svg></div><div class="ns-diag-text"><h6>Ultrasound (if needed)</h6><p>In severe cases, KUB ultrasound to check kidneys and associated anomalies.</p></div></div>
+              </div>
+            </div>
+            <div class="ns-panel" data-tab="treatment">
+              <div class="ns-treatment-track">
+                <div class="ns-treat-step"><div class="ns-treat-dot surgical"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-nerve">Surgical</span><h6>Urethroplasty</h6><p>Single-stage reconstruction using the foreskin to create a new urethra with the opening at the tip. Done under general anaesthesia as a day-case or 1-night stay.</p></div></div>
+                <div class="ns-treat-step"><div class="ns-treat-dot"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-brain">Follow-up</span><h6>Recovery</h6><p>A small catheter is kept for a few days. Most children return to normal activity in 1&ndash;2 weeks.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 2. Inguinal Hernia -->
+      <div class="ns-card reveal" data-cat="spine" data-idx="2">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-spine"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg></div>
+          <div class="ns-card-meta"><h3>Inguinal &amp; Umbilical Hernia</h3><p>A soft bulge in the groin or belly-button that appears during crying, coughing, or straining.</p></div>
+          <span class="ns-card-badge badge-spine">Abdomen</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs"><button class="ns-tab active" data-tab="overview" type="button">Overview</button><button class="ns-tab" data-tab="symptoms" type="button">Signs</button><button class="ns-tab" data-tab="treatment" type="button">Treatment</button></div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="overview">
+              <div class="ns-overview-grid">
+                <div class="ns-overview-text">
+                  <p>An <strong>inguinal hernia</strong> in children is caused by a persistent processus vaginalis &mdash; a sac of peritoneum that normally closes before birth. When it stays open, abdominal contents can slip through into the groin.</p>
+                  <div class="ns-quick-facts"><div class="ns-qf"><div class="ns-qf-val">3&ndash;5%</div><div class="ns-qf-key">Term babies</div></div><div class="ns-qf"><div class="ns-qf-val">30%</div><div class="ns-qf-key">Preterm</div></div><div class="ns-qf"><div class="ns-qf-val">Day-case</div><div class="ns-qf-key">Same-day home</div></div></div>
+                </div>
+                <div class="ns-fact-box"><h5>Why Early Surgery?</h5><div class="ns-fact"><span class="ns-fact-num">!</span><span class="ns-fact-desc">An incarcerated hernia (stuck) is a surgical emergency &mdash; it can cut off blood supply to bowel or testis.</span></div><div class="ns-fact"><span class="ns-fact-num">&check;</span><span class="ns-fact-desc">Elective laparoscopic repair is quick, safe, and prevents emergency complications.</span></div></div>
+              </div>
+            </div>
+            <div class="ns-panel" data-tab="symptoms">
+              <div class="ns-symptom-grid">
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Intermittent groin swelling</div>
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Bulge that appears with crying</div>
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Belly-button bulge (umbilical)</div>
+                <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Painful, non-reducible lump (EMERGENCY)</div>
+              </div>
+            </div>
+            <div class="ns-panel" data-tab="treatment">
+              <div class="ns-treatment-track">
+                <div class="ns-treat-step"><div class="ns-treat-dot surgical"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-spine">Surgical</span><h6>Laparoscopic Hernia Repair</h6><p>Key-hole surgery with 3mm instruments &mdash; the hernial sac is closed internally. Both sides can be checked at once. Child goes home the same day.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 3. Undescended Testis -->
+      <div class="ns-card reveal" data-cat="nerve" data-idx="3">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-nerve"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg></div>
+          <div class="ns-card-meta"><h3>Undescended Testis (Cryptorchidism)</h3><p>One or both testes have not descended into the scrotum by 6 months of age.</p></div>
+          <span class="ns-card-badge badge-nerve">Urology</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs"><button class="ns-tab active" data-tab="overview" type="button">Overview</button><button class="ns-tab" data-tab="treatment" type="button">Treatment</button></div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="overview"><div class="ns-overview-grid">
+              <div class="ns-overview-text"><p>The testes develop in the abdomen and normally descend into the scrotum before birth. When descent fails, surgery (orchidopexy) is needed &mdash; ideally between 9 and 18 months &mdash; to protect fertility and reduce the lifetime risk of testicular cancer.</p>
+                <div class="ns-quick-facts"><div class="ns-qf"><div class="ns-qf-val">3%</div><div class="ns-qf-key">Term babies</div></div><div class="ns-qf"><div class="ns-qf-val">9&ndash;18 m</div><div class="ns-qf-key">Ideal Age</div></div><div class="ns-qf"><div class="ns-qf-val">Day-case</div><div class="ns-qf-key">Surgery</div></div></div>
+              </div>
+              <div class="ns-fact-box"><h5>Why it Matters</h5><div class="ns-fact"><span class="ns-fact-num">1.</span><span class="ns-fact-desc">An undescended testis is warmer than body temperature &mdash; this harms sperm-producing cells.</span></div><div class="ns-fact"><span class="ns-fact-num">2.</span><span class="ns-fact-desc">Early surgery preserves fertility and simplifies future cancer screening.</span></div></div>
+            </div></div>
+            <div class="ns-panel" data-tab="treatment"><div class="ns-treatment-track">
+              <div class="ns-treat-step"><div class="ns-treat-dot surgical"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-nerve">Surgical</span><h6>Orchidopexy</h6><p>Open or laparoscopic technique to bring the testis down into the scrotum and fix it. Performed as a day-case under general anaesthesia.</p></div></div>
+            </div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 4. Neonatal Surgical Emergencies -->
+      <div class="ns-card reveal" data-cat="vascular" data-idx="4">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-vascular"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9a2 2 0 012-2h2V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v3h6V7a3 3 0 00-3-3z"/></svg></div>
+          <div class="ns-card-meta"><h3>Neonatal Surgical Emergencies</h3><p>TEF, anorectal malformations, Hirschsprung's, diaphragmatic hernia, gastroschisis &mdash; operated within the first days of life.</p></div>
+          <span class="ns-card-badge badge-vascular">Neonatal</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs"><button class="ns-tab active" data-tab="overview" type="button">Overview</button><button class="ns-tab" data-tab="surgery" type="button">Approach</button></div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="overview"><div class="ns-overview-grid">
+              <div class="ns-overview-text"><p>Some babies are born with anomalies that need urgent surgery in the first days of life. These include <strong>tracheo-oesophageal fistula (TEF)</strong>, <strong>anorectal malformations</strong>, <strong>Hirschsprung's disease</strong>, <strong>congenital diaphragmatic hernia</strong>, and abdominal wall defects.</p>
+                <div class="ns-severity"><span class="ns-severity-lbl">Urgency</span><div class="ns-sev-track"><div class="ns-sev-fill" style="width:95%"></div></div></div>
+              </div>
+              <div class="ns-fact-box"><h5>Why Specialised Care?</h5><div class="ns-fact"><span class="ns-fact-num">&bull;</span><span class="ns-fact-desc">A newborn's anatomy is millimetre-scale; anaesthesia, fluid balance and temperature control are all delicate.</span></div><div class="ns-fact"><span class="ns-fact-num">&bull;</span><span class="ns-fact-desc">A general surgeon is not trained for these conditions &mdash; they demand paediatric super-specialty expertise.</span></div></div>
+            </div></div>
+            <div class="ns-panel" data-tab="surgery"><div class="ns-surgery-steps">
+              <div class="ns-surgery-step"><div class="ns-step-num">1</div><div class="ns-step-content"><h6>Rapid Stabilisation</h6><p>Temperature, airway, IV fluids, and antibiotics secured in the NICU before surgery.</p></div></div>
+              <div class="ns-surgery-step"><div class="ns-step-num">2</div><div class="ns-step-content"><h6>Imaging &amp; Diagnosis</h6><p>X-ray, ultrasound, or contrast study to confirm the anomaly and plan the approach.</p></div></div>
+              <div class="ns-surgery-step"><div class="ns-step-num">3</div><div class="ns-step-content"><h6>Gentle Surgery</h6><p>Miniature instruments, magnification, and minimal tissue handling &mdash; open or thoracoscopic/laparoscopic.</p></div></div>
+              <div class="ns-surgery-step"><div class="ns-step-num">4</div><div class="ns-step-content"><h6>NICU Recovery</h6><p>Close monitoring, gradual feeding, and parent involvement in care.</p></div></div>
+            </div><div class="ns-surgery-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div><strong>Antenatal counselling</strong> is available when anomalies are detected on scans before birth &mdash; so parents know what to expect.</div></div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 5. Appendicitis -->
+      <div class="ns-card reveal" data-cat="spine" data-idx="5">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-spine"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zm-1 5h2v5h-2zm0 7h2v2h-2z"/></svg></div>
+          <div class="ns-card-meta"><h3>Appendicitis in Children</h3><p>The most common cause of emergency abdominal surgery in children &mdash; requires quick diagnosis.</p></div>
+          <span class="ns-card-badge badge-spine">Abdomen</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs"><button class="ns-tab active" data-tab="symptoms" type="button">Signs</button><button class="ns-tab" data-tab="treatment" type="button">Treatment</button></div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="symptoms"><div class="ns-symptom-grid">
+              <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Belly pain moving to right lower side</div>
+              <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Loss of appetite</div>
+              <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Fever and vomiting</div>
+              <div class="ns-symptom-item"><span class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span>Refusal to walk / hopping</div>
+            </div></div>
+            <div class="ns-panel" data-tab="treatment"><div class="ns-treatment-track">
+              <div class="ns-treat-step"><div class="ns-treat-dot surgical"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-spine">Surgical</span><h6>Laparoscopic Appendicectomy</h6><p>Three tiny (5mm) incisions, minimal pain, quick return to school. Typical hospital stay is 1&ndash;2 days.</p></div></div>
+            </div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 6. Foreign Body -->
+      <div class="ns-card reveal" data-cat="trauma" data-idx="6">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-trauma"><svg viewBox="0 0 24 24"><path d="M20 6h-3V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2z"/></svg></div>
+          <div class="ns-card-meta"><h3>Foreign Body in Windpipe / Food Pipe</h3><p>Urgent endoscopic removal of coins, batteries, toys and other objects swallowed or inhaled by children.</p></div>
+          <span class="ns-card-badge badge-trauma">Emergency</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs"><button class="ns-tab active" data-tab="overview" type="button">Overview</button><button class="ns-tab" data-tab="treatment" type="button">Treatment</button></div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="overview"><div class="ns-overview-grid">
+              <div class="ns-overview-text"><p>Toddlers explore their world with their mouths. Swallowed coins, <strong>button batteries</strong> (very dangerous!), magnets, and small toys can lodge in the food pipe or windpipe, causing serious injury if not removed promptly.</p>
+                <div class="ns-severity"><span class="ns-severity-lbl">Urgency</span><div class="ns-sev-track"><div class="ns-sev-fill" style="width:85%"></div></div></div>
+              </div>
+              <div class="ns-fact-box"><h5>Red Flags</h5><div class="ns-fact"><span class="ns-fact-num">!</span><span class="ns-fact-desc">Sudden choking, drooling, refusing feeds, noisy breathing, persistent cough.</span></div><div class="ns-fact"><span class="ns-fact-num">!</span><span class="ns-fact-desc">Button batteries must be removed within hours &mdash; they burn tissue.</span></div></div>
+            </div></div>
+            <div class="ns-panel" data-tab="treatment"><div class="ns-treatment-track">
+              <div class="ns-treat-step"><div class="ns-treat-dot surgical"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-trauma">Emergency</span><h6>Endoscopic Removal</h6><p>Bronchoscopy or oesophagoscopy under general anaesthesia &mdash; the object is grasped and gently removed without an incision.</p></div></div>
+            </div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 7. Hydrocephalus & Meningomyelocele -->
+      <div class="ns-card reveal" data-cat="brain" data-idx="7">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-brain"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 00-3.6 2.2A3.5 3.5 0 005 8.5c0 .9.3 1.7.9 2.3A3.5 3.5 0 005 14c0 1.9 1.6 3.5 3.5 3.5.2 0 .4 0 .5-.1V21h2V6a2 2 0 014 0v15h2v-3.6c.1 0 .3.1.5.1A3.5 3.5 0 0020 14c0-1.2-.5-2.3-1.3-3.1.5-.6.8-1.4.8-2.4A3.5 3.5 0 0016 5.2 4 4 0 0012 3z"/></svg></div>
+          <div class="ns-card-meta"><h3>Hydrocephalus &amp; Meningomyelocele</h3><p>V-P shunt surgery for fluid build-up in the brain; repair of open spinal cord defects at the back of the spine.</p></div>
+          <span class="ns-card-badge badge-brain">Neural</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs"><button class="ns-tab active" data-tab="overview" type="button">Overview</button><button class="ns-tab" data-tab="treatment" type="button">Treatment</button></div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="overview"><div class="ns-overview-grid">
+              <div class="ns-overview-text"><p><strong>Hydrocephalus</strong> is a build-up of cerebrospinal fluid in the brain's ventricles, causing an enlarged head and raised pressure. <strong>Meningomyelocele</strong> is a birth defect where the spinal cord and membranes protrude through an opening in the back &mdash; often associated with hydrocephalus.</p></div>
+              <div class="ns-fact-box"><h5>Key Points</h5><div class="ns-fact"><span class="ns-fact-num">&bull;</span><span class="ns-fact-desc">Both conditions are often diagnosed on antenatal scans.</span></div><div class="ns-fact"><span class="ns-fact-num">&bull;</span><span class="ns-fact-desc">Early surgery protects neurological development and quality of life.</span></div></div>
+            </div></div>
+            <div class="ns-panel" data-tab="treatment"><div class="ns-treatment-track">
+              <div class="ns-treat-step"><div class="ns-treat-dot surgical"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-brain">Surgical</span><h6>V-P Shunt Placement</h6><p>A small tube is placed to divert excess fluid from the brain into the abdomen, relieving pressure.</p></div></div>
+              <div class="ns-treat-step"><div class="ns-treat-dot surgical"></div><div class="ns-treat-content"><span class="ns-treat-tag badge-brain">Surgical</span><h6>Meningomyelocele Repair</h6><p>Closure of the spinal defect within 48&ndash;72 hours of birth to prevent infection and further neural damage.</p></div></div>
+            </div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 8. Paediatric Solid Tumours -->
+      <div class="ns-card reveal" data-cat="trauma" data-idx="8">
+        <button class="ns-card-head" aria-expanded="false" type="button">
+          <div class="ns-card-icon icon-trauma"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg></div>
+          <div class="ns-card-meta"><h3>Paediatric Solid Tumours</h3><p>Surgical management of Wilms' tumour, neuroblastoma, hepatoblastoma and other childhood cancers in a multi-disciplinary setting.</p></div>
+          <span class="ns-card-badge badge-trauma">Oncology</span>
+          <span class="ns-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+        </button>
+        <div class="ns-card-body"><div class="ns-card-body-inner">
+          <div class="ns-tabs"><button class="ns-tab active" data-tab="overview" type="button">Overview</button></div>
+          <div class="ns-panels">
+            <div class="ns-panel active" data-tab="overview"><div class="ns-overview-grid">
+              <div class="ns-overview-text"><p>Childhood solid tumours require a delicate balance of <strong>chemotherapy, surgery, and sometimes radiation</strong>. With modern protocols and experienced paediatric surgical care, outcomes are excellent for most tumours.</p></div>
+              <div class="ns-fact-box"><h5>Approach</h5><div class="ns-fact"><span class="ns-fact-num">&bull;</span><span class="ns-fact-desc">Multi-disciplinary team: paediatric oncologist, surgeon, radiologist, pathologist.</span></div><div class="ns-fact"><span class="ns-fact-num">&bull;</span><span class="ns-fact-desc">Organ-preserving surgery wherever possible.</span></div></div>
+            </div></div>
+          </div>
+        </div></div>
+      </div>
+
+    </div><!-- /ns-accordion -->
+
+    <!-- ─── CTA BAND ─── -->
+    <section class="ns-cta-band">
+      <div class="section-tag" style="background:rgba(246,135,179,0.18); border-color:rgba(246,135,179,0.4); color:var(--gold)">Personal Consultation</div>
+      <h2>Worried About Your Child?</h2>
+      <p>A detailed consultation with Dr. Swapnil can bring clarity and reassurance. Every child is seen personally &mdash; in a calm, kid-friendly setting, with parents as partners in care.</p>
+      <span class="nav-cta" role="button" tabindex="0" onclick="showPage('appointments')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('appointments')}" style="display:inline-flex; align-items:center; gap:10px; padding:14px 34px; font-size:0.95rem; cursor:pointer">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        Book a Consultation
+      </span>
+    </section>
+
+  </div><!-- /page-learn -->
+
+
+  <!-- ─── PAGE TRANSITION OVERLAY ─────────────────────────────── -->
+  <div id="page-transition" style="
+    position:fixed; inset:0; z-index:9999;
+    background: var(--navy);
+    pointer-events:none;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  "></div>
+
+  <script>
+    /* ─── PAGE SWITCHING ──────────────────────────────────────── */
+    let currentPage = 'home';
+    const overlay = document.getElementById('page-transition');
+
+    function showPage(page) {
+      if (page === currentPage) return;
+      // slide overlay in
+      overlay.style.transform = 'translateY(0)';
+      overlay.style.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
+      setTimeout(() => {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page-' + page).classList.add('active');
+        currentPage = page;
+        window.scrollTo(0, 0);
+        updateNav(page);
+        // Reset appointment form if re-entering the page after a successful submit
+        if (page === 'appointments') resetBookingForm();
+        // re-run reveal observers for new page
+        initReveal();
+        initCounters();
+        updateNavbar();
+        // slide overlay out
+        overlay.style.transition = 'transform 0.35s cubic-bezier(.4,0,.2,1)';
+        overlay.style.transform = 'translateY(100%)';
+        setTimeout(() => { overlay.style.transform = 'translateY(-100%)'; overlay.style.transition = 'none'; }, 380);
+      }, 300);
+    }
+
+    function updateNav(page) {
+      document.querySelectorAll('.nav-link').forEach(l => {
+        l.classList.remove('active');
+        l.removeAttribute('aria-current');
+      });
+      const map = {home:0, clinic:1, learn:2, appointments:3};
+      // Update both top nav and mobile menu active states
+      document.querySelectorAll('#navbar .nav-links .nav-link:not(.nav-cta), #mobile-menu .nav-link:not(.nav-cta)').forEach((l, i) => {
+        const perMenu = i % 4;
+        if (perMenu === map[page]) {
+          l.classList.add('active');
+          l.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const hamburger = document.getElementById('hamburger');
+      const open = menu.classList.toggle('open');
+      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const hamburger = document.getElementById('hamburger');
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Close mobile menu on Escape or outside click
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', e => {
+      const menu = document.getElementById('mobile-menu');
+      const hamburger = document.getElementById('hamburger');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    /* ─── NAVBAR SCROLL + SCROLL PROGRESS ─────────────────────── */
+    const scrollProgress = document.getElementById('scroll-progress');
+    function updateNavbar() {
+      const nav = document.getElementById('navbar');
+      const scrolled = window.scrollY > 60;
+      const isHome = currentPage === 'home';
+      nav.classList.remove('scrolled', 'light');
+      if (!isHome) nav.classList.add('light');
+      else if (scrolled) nav.classList.add('scrolled');
+
+      // Scroll progress bar
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+      if (scrollProgress) scrollProgress.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    updateNavbar();
+
+    /* ─── INTERSECTION OBSERVER — REVEALS ────────────────────── */
+    let revealObserver;
+    function initReveal() {
+      if (revealObserver) revealObserver.disconnect();
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            revealObserver.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('visible');
+        revealObserver.observe(el);
+      });
+      // stat items
+      document.querySelectorAll('.stat-item').forEach(el => {
+        el.classList.remove('visible');
+        revealObserver.observe(el);
+      });
+    }
+
+    /* ─── COUNTER ANIMATION ───────────────────────────────────── */
+    let counterObserver;
+    function initCounters() {
+      if (counterObserver) counterObserver.disconnect();
+      const counters = document.querySelectorAll('.count');
+      counters.forEach(c => { c.textContent = '0'; c._done = false; });
+      counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const el = e.target;
+            if (el._done) return;
+            el._done = true;
+            const target = parseInt(el.dataset.target);
+            const duration = 1800;
+            const start = performance.now();
+            function tick(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              // easeOutCubic
+              const ease = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(ease * target).toLocaleString();
+              if (progress < 1) requestAnimationFrame(tick);
+              else el.textContent = target.toLocaleString();
+            }
+            requestAnimationFrame(tick);
+            counterObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(c => counterObserver.observe(c));
+    }
+
+    /* ─── APPOINTMENT FORM ────────────────────────────────────── */
+    const bookingForm = document.getElementById('booking-form');
+    const formError = document.getElementById('form-error');
+    const submitBtn = bookingForm.querySelector('.btn-submit');
+
+    function showSuccess() {
+      bookingForm.style.transition = 'opacity 0.4s, transform 0.4s';
+      bookingForm.style.opacity = '0';
+      bookingForm.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        bookingForm.style.display = 'none';
+        const success = document.getElementById('form-success');
+        success.style.display = 'block';
+        success.style.animation = 'fadeUp 0.5s ease both';
+      }, 400);
+    }
+
+    bookingForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      formError.textContent = '';
+      formError.classList.remove('visible');
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+
+      try {
+        const formData = new FormData(bookingForm);
+        const res = await fetch(bookingForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) throw new Error('Network response was not ok');
+        showSuccess();
+      } catch (err) {
+        formError.textContent = 'Sorry, we couldn\u2019t send your request. Please try again, or email us directly at swapnil.pattanshetti.peds@gmail.com.';
+        formError.classList.add('visible');
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        submitBtn.innerHTML = originalText;
+      }
+    });
+
+    function resetBookingForm() {
+      const success = document.getElementById('form-success');
+      if (success.style.display === 'block') {
+        success.style.display = 'none';
+        bookingForm.reset();
+        bookingForm.style.display = '';
+        bookingForm.style.opacity = '';
+        bookingForm.style.transform = '';
+        bookingForm.style.transition = '';
+      }
+    }
+
+    /* ─── SET MIN DATE ON DATE INPUT ──────────────────────────── */
+    const dateInput = document.getElementById('f-date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+    }
+
+    /* ─── LEARN PAGE INTERACTIONS ─────────────────────────────── */
+    // Accordion: toggle open state on card-head click
+    document.querySelectorAll('.ns-card-head').forEach(head => {
+      head.addEventListener('click', () => {
+        const card = head.closest('.ns-card');
+        const isOpen = card.classList.toggle('open');
+        head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+
+    // Tabs: switch panels within an open card
+    document.querySelectorAll('.ns-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const card = tab.closest('.ns-card');
+        const targetTab = tab.dataset.tab;
+        card.querySelectorAll('.ns-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        card.querySelectorAll('.ns-panel').forEach(p => {
+          p.classList.toggle('active', p.dataset.tab === targetTab);
+        });
+      });
+    });
+
+    // Filter chips
+    function applyFilter(cat) {
+      document.querySelectorAll('.ns-chip').forEach(c => {
+        c.classList.toggle('active', c.dataset.cat === cat);
+      });
+      document.querySelectorAll('.ns-card').forEach(card => {
+        const match = cat === 'all' || card.dataset.cat === cat;
+        card.classList.toggle('ns-hidden', !match);
+        // close any open card that gets hidden
+        if (!match) {
+          card.classList.remove('open');
+          const head = card.querySelector('.ns-card-head');
+          if (head) head.setAttribute('aria-expanded', 'false');
+        }
+      });
+      // sync anatomy hotspot/legend active state
+      document.querySelectorAll('.anatomy-hotspot').forEach(h => {
+        h.classList.toggle('active-hs', h.dataset.cat === cat);
+      });
+      document.querySelectorAll('.anatomy-legend-item').forEach(l => {
+        l.classList.toggle('active', l.dataset.cat === cat);
+      });
+    }
+    document.querySelectorAll('.ns-chip').forEach(chip => {
+      chip.addEventListener('click', () => applyFilter(chip.dataset.cat));
+    });
+
+    // Anatomy hotspots + legend → filter by category
+    document.querySelectorAll('.anatomy-hotspot, .anatomy-legend-item').forEach(el => {
+      const trigger = () => {
+        applyFilter(el.dataset.cat);
+        // smooth scroll to the accordion
+        const target = document.querySelector('.ns-filter-bar');
+        if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      };
+      el.addEventListener('click', trigger);
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+      });
+    });
+
+    /* ─── INIT ────────────────────────────────────────────────── */
+    initReveal();
+    initCounters();
+
+    // Re-init on page switch (already in showPage)
+    // Also update navbar on page switch
+    window.addEventListener('scroll', () => {
+      updateNavbar();
+    });
+
+    // Smooth anchor scrolls on same-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+
+    // initial navbar state for non-home pages
+    updateNavbar();
+  </script>
+</body>
+</html>
