@@ -502,6 +502,172 @@
     }
     .credential-card:hover .credential-cta { background: var(--gold); color: var(--navy); gap: 10px; }
 
+    /* ─── CONDITION MODAL ───────────────────────────────────────── */
+    .cond-card { cursor: pointer; }
+    .cond-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .condition-card .learn-more { pointer-events: none; }
+    .condition-card .learn-more { opacity: 0.75; }
+    .condition-card:hover .learn-more { opacity: 1; }
+
+    .cond-modal {
+      position: fixed; inset: 0; z-index: 2000;
+      display: none;
+      align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .cond-modal.open { display: flex; }
+    .cond-modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(45, 27, 105, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      animation: modalFade 0.25s ease both;
+    }
+    @keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+    .cond-modal-card {
+      position: relative;
+      background: white;
+      border-radius: 22px;
+      width: 100%;
+      max-width: 620px;
+      max-height: 86vh;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 24px 80px rgba(45, 27, 105, 0.35);
+      animation: modalPop 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes modalPop {
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0)    scale(1); }
+    }
+    .cond-modal-close {
+      position: absolute; top: 14px; right: 14px; z-index: 2;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--bg); color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      border: none; cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .cond-modal-close:hover { background: var(--navy); color: white; transform: rotate(90deg); }
+    .cond-modal-header {
+      display: flex; align-items: center; gap: 16px;
+      padding: 28px 32px 20px;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
+      border-bottom: 1px solid rgba(107, 70, 193, 0.08);
+    }
+    .cond-modal-icon {
+      width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0;
+      background: white;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(107, 70, 193, 0.15);
+    }
+    .cond-modal-icon svg { width: 28px; height: 28px; fill: var(--navy); }
+    .cond-modal-head-text { min-width: 0; }
+    .cond-modal-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--gold-d); margin-bottom: 4px;
+    }
+    #cond-modal-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem; color: var(--navy); line-height: 1.2;
+    }
+    .cond-modal-body {
+      padding: 24px 32px 28px;
+      overflow-y: auto;
+      flex: 1;
+      font-size: 0.93rem; color: var(--text); line-height: 1.72;
+    }
+    .cond-modal-body p { margin-bottom: 14px; }
+    .cond-modal-body p strong { color: var(--navy); }
+    .cond-modal-body h5 {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--gold-d);
+      margin-top: 20px; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .cond-modal-body h5::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+    }
+    .cond-modal-body ul {
+      list-style: none; padding: 0; margin: 0 0 12px;
+    }
+    .cond-modal-body ul li {
+      position: relative; padding: 6px 0 6px 22px;
+      font-size: 0.9rem; color: var(--text); line-height: 1.6;
+    }
+    .cond-modal-body ul li::before {
+      content: ''; position: absolute; left: 4px; top: 13px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--gold));
+    }
+    .cond-modal-quickfacts {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+      margin: 6px 0 18px;
+    }
+    .cond-modal-qf {
+      background: var(--bg); border-radius: 12px; padding: 12px 10px;
+      text-align: center;
+    }
+    .cond-modal-qf-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem; color: var(--navy); line-height: 1;
+    }
+    .cond-modal-qf-key {
+      font-size: 0.68rem; font-weight: 700; color: var(--text-l);
+      text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;
+    }
+    .cond-modal-note {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 14px 16px; border-radius: 12px;
+      background: rgba(246, 135, 179, 0.10);
+      border: 1px solid rgba(246, 135, 179, 0.3);
+      font-size: 0.85rem; color: var(--text); line-height: 1.6;
+      margin-top: 14px;
+    }
+    .cond-modal-note svg {
+      width: 18px; height: 18px; fill: var(--gold-d); flex-shrink: 0; margin-top: 2px;
+    }
+    .cond-modal-footer {
+      display: flex; gap: 10px; justify-content: flex-end;
+      padding: 16px 32px 22px;
+      border-top: 1px solid rgba(107, 70, 193, 0.08);
+      background: #FCFBFF;
+    }
+    .cond-modal-footer .btn-outline {
+      border-color: rgba(107, 70, 193, 0.3);
+      color: var(--navy);
+      padding: 10px 22px;
+    }
+    .cond-modal-footer .btn-outline:hover {
+      border-color: var(--navy);
+      background: var(--bg);
+      color: var(--navy);
+    }
+    .cond-modal-footer .btn-gold { padding: 10px 22px; font-size: 0.9rem; }
+    .cond-modal-footer .btn-gold svg { color: var(--navy); }
+
+    body.cond-open { overflow: hidden; }
+
+    @media (max-width: 600px) {
+      .cond-modal { padding: 12px; align-items: flex-end; }
+      .cond-modal-card {
+        max-height: 92vh;
+        border-radius: 22px 22px 14px 14px;
+        animation: modalSlide 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      @keyframes modalSlide {
+        from { transform: translateY(40px); opacity: 0; }
+        to   { transform: translateY(0); opacity: 1; }
+      }
+      .cond-modal-header { padding: 22px 22px 16px; }
+      #cond-modal-title { font-size: 1.25rem; }
+      .cond-modal-body { padding: 20px 22px 24px; }
+      .cond-modal-footer { padding: 14px 22px 18px; flex-direction: column-reverse; }
+      .cond-modal-footer .btn-outline,
+      .cond-modal-footer .btn-gold { width: 100%; justify-content: center; }
+      .cond-modal-quickfacts { grid-template-columns: 1fr 1fr; }
+    }
+
     /* ─── WHY PAEDIATRIC SURGERY ────────────────────────────────── */
     #why-peds {
       padding: 96px 5%;
@@ -1975,7 +2141,7 @@
         </div>
         <div class="conditions-grid">
 
-          <div class="condition-card reveal reveal-delay-1">
+          <div class="condition-card reveal reveal-delay-1 cond-card" data-cond="hypospadias" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
             </div>
@@ -1984,7 +2150,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-2">
+          <div class="condition-card reveal reveal-delay-2 cond-card" data-cond="hernia" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
             </div>
@@ -1993,7 +2159,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-3">
+          <div class="condition-card reveal reveal-delay-3 cond-card" data-cond="udt" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 10.5c0 2.5-2 4.5-4 4.5s-4-2-4-4.5 1.5-4.5 4-4.5 4 2 4 4.5z"/></svg>
             </div>
@@ -2002,7 +2168,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-1">
+          <div class="condition-card reveal reveal-delay-1 cond-card" data-cond="circumcision" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.85 2.92 7.21 5 9.88 2.11-2.69 5-7 5-9.88 0-2.76-2.24-5-5-5zm0 22s-8-7.58-8-14a8 8 0 0116 0c0 6.42-8 14-8 14z"/></svg>
             </div>
@@ -2011,7 +2177,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-2">
+          <div class="condition-card reveal reveal-delay-2 cond-card" data-cond="neonatal" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-13h2v5h3l-4 5-4-5h3z"/></svg>
             </div>
@@ -2020,7 +2186,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-3">
+          <div class="condition-card reveal reveal-delay-3 cond-card" data-cond="urology" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v3H5a2 2 0 00-2 2v10h18V12a2 2 0 00-2-2h-2V7a5 5 0 00-5-5zm-3 8V7a3 3 0 016 0v3H9z"/></svg>
             </div>
@@ -2029,7 +2195,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-1">
+          <div class="condition-card reveal reveal-delay-1 cond-card" data-cond="hydrocephalus" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 00-3.6 2.2A3.5 3.5 0 005 8.5c0 .9.3 1.7.9 2.3A3.5 3.5 0 005 14c0 1.9 1.6 3.5 3.5 3.5.2 0 .4 0 .5-.1V21h2V6a2 2 0 014 0v15h2v-3.6c.1 0 .3.1.5.1A3.5 3.5 0 0020 14c0-1.2-.5-2.3-1.3-3.1.5-.6.8-1.4.8-2.4A3.5 3.5 0 0016 5.2 4 4 0 0012 2z"/></svg>
             </div>
@@ -2038,7 +2204,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-2">
+          <div class="condition-card reveal reveal-delay-2 cond-card" data-cond="appendicitis" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 00-4 4v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-2V8a4 4 0 00-4-4zm-2 6V8a2 2 0 014 0v2h-4z"/></svg>
             </div>
@@ -2047,7 +2213,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-3">
+          <div class="condition-card reveal reveal-delay-3 cond-card" data-cond="liver" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-7.07 17.07A10 10 0 0012 22a10 10 0 007.07-2.93A10 10 0 0022 12a10 10 0 00-2.93-7.07A10 10 0 0012 2zm0 4a6 6 0 016 6 6 6 0 01-6 6 6 6 0 01-6-6 6 6 0 016-6z"/></svg>
             </div>
@@ -2056,7 +2222,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-1">
+          <div class="condition-card reveal reveal-delay-1 cond-card" data-cond="tumours" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V13H5V6.3l7-2.61v9.3z"/></svg>
             </div>
@@ -2065,7 +2231,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-2">
+          <div class="condition-card reveal reveal-delay-2 cond-card" data-cond="fb" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M20 6h-3V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2zM9 4h6v2H9V4zm4 11h-2v3h-2v-3H6v-2h3v-3h2v3h2v2z"/></svg>
             </div>
@@ -2074,7 +2240,7 @@
             <div class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
           </div>
 
-          <div class="condition-card reveal reveal-delay-3">
+          <div class="condition-card reveal reveal-delay-3 cond-card" data-cond="antenatal" role="button" tabindex="0">
             <div class="condition-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 12h-4v4h-2v-4H7v-2h4V8h2v4h4v2z"/></svg>
             </div>
@@ -2717,6 +2883,35 @@
   </div><!-- /page-learn -->
 
 
+  <!-- ─── CONDITION DETAIL MODAL ──────────────────────────────── -->
+  <div id="cond-modal" class="cond-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cond-modal-title">
+    <div class="cond-modal-backdrop" data-cond-close></div>
+    <div class="cond-modal-card" role="document">
+      <button class="cond-modal-close" type="button" aria-label="Close" data-cond-close>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <div class="cond-modal-header">
+        <div class="cond-modal-icon" id="cond-modal-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+        </div>
+        <div class="cond-modal-head-text">
+          <div class="cond-modal-eyebrow" id="cond-modal-eyebrow">Paediatric Condition</div>
+          <h3 id="cond-modal-title">Condition Title</h3>
+        </div>
+      </div>
+      <div class="cond-modal-body" id="cond-modal-body">
+        <!-- populated by JS -->
+      </div>
+      <div class="cond-modal-footer">
+        <button class="btn-outline cond-modal-secondary" type="button" data-cond-close>Close</button>
+        <button class="btn-gold cond-modal-cta" type="button" onclick="showPage('appointments'); closeCondModal();">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          Book Consultation
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ─── PAGE TRANSITION OVERLAY ─────────────────────────────── -->
   <div id="page-transition" style="
     position:fixed; inset:0; z-index:9999;
@@ -2997,6 +3192,244 @@
       el.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
       });
+    });
+
+    /* ─── CONDITION DETAIL MODAL ──────────────────────────────── */
+    const CONDITIONS = {
+      hypospadias: {
+        eyebrow: 'Paediatric Urology',
+        title: 'Hypospadias',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.85 2.92 7.21 5 9.88 2.11-2.69 5-7 5-9.88 0-2.76-2.24-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>',
+        body: `<p><strong>Hypospadias</strong> is one of the most common birth defects in boys, occurring in roughly 1 in every 200–300 male births. The opening of the urethra is located on the underside of the penis instead of at the tip, ranging from mild (just below the tip) to severe (near the scrotum). It is often accompanied by a downward curvature (chordee) and a hooded foreskin.</p>
+          <div class="cond-modal-quickfacts">
+            <div class="cond-modal-qf"><div class="cond-modal-qf-val">1:250</div><div class="cond-modal-qf-key">Incidence</div></div>
+            <div class="cond-modal-qf"><div class="cond-modal-qf-val">6–18 m</div><div class="cond-modal-qf-key">Ideal age</div></div>
+            <div class="cond-modal-qf"><div class="cond-modal-qf-val">Day care</div><div class="cond-modal-qf-key">Most cases</div></div>
+          </div>
+          <h5>Signs parents notice</h5>
+          <ul><li>Urinary opening not at the tip of the penis</li><li>Curved penis (chordee), noticed during erection or examination</li><li>Hooded appearance of the foreskin</li><li>Urine stream that sprays or points downward</li></ul>
+          <h5>Treatment approach</h5>
+          <p>A single-stage <strong>urethroplasty</strong> is performed under general anaesthesia, using the child’s own foreskin tissue to reconstruct a new urethra reaching to the tip. A small catheter stays for a few days. Most boys are home the same day or after one night and return to normal activity within 1–2 weeks.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div><strong>Important:</strong> Do <strong>not</strong> circumcise before consulting a paediatric surgeon — the foreskin is needed for the reconstruction.</div></div>`
+      },
+      hernia: {
+        eyebrow: 'Abdomen',
+        title: 'Inguinal & Umbilical Hernia',
+        icon: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>',
+        body: `<p>An <strong>inguinal hernia</strong> in children is caused by a persistent processus vaginalis — a small sac of abdominal lining that normally closes before birth. When it remains open, abdominal contents (intestine or fluid) can slip down into the groin or scrotum. An <strong>umbilical hernia</strong> is a similar soft bulge at the belly-button, caused by incomplete closure of the abdominal wall.</p>
+          <div class="cond-modal-quickfacts">
+            <div class="cond-modal-qf"><div class="cond-modal-qf-val">3–5%</div><div class="cond-modal-qf-key">Term babies</div></div>
+            <div class="cond-modal-qf"><div class="cond-modal-qf-val">30%</div><div class="cond-modal-qf-key">Preterm</div></div>
+            <div class="cond-modal-qf"><div class="cond-modal-qf-val">Day care</div><div class="cond-modal-qf-key">Same-day home</div></div>
+          </div>
+          <h5>Signs parents notice</h5>
+          <ul><li>Intermittent soft bulge in the groin or scrotum, most visible with crying, coughing or straining</li><li>Swelling at the belly-button that appears when the child cries</li><li>Bulge that comes and goes — usually not painful</li><li>A firm, painful, non-reducible lump is an <strong>emergency</strong> (incarcerated hernia)</li></ul>
+          <h5>Treatment approach</h5>
+          <p>Laparoscopic hernia repair uses three tiny (3–5 mm) incisions. The hernial sac is closed from the inside, and both sides can be checked in the same sitting. The child goes home the same day with minimal pain and barely visible scars. Most umbilical hernias under 2 cm may close on their own by age 4 — only larger or persistent ones need surgery.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div><strong>Elective repair is safer:</strong> an incarcerated (stuck) hernia can cut off blood supply to bowel or testis and becomes an emergency.</div></div>`
+      },
+      udt: {
+        eyebrow: 'Paediatric Urology',
+        title: 'Undescended Testis (Cryptorchidism)',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 10.5c0 2.5-2 4.5-4 4.5s-4-2-4-4.5 1.5-4.5 4-4.5 4 2 4 4.5z"/></svg>',
+        body: `<p>The testes form inside the abdomen during pregnancy and normally descend into the scrotum before birth. In about <strong>3% of term babies</strong> (and up to 30% of preterm babies), one or both testes fail to descend. If the testis has not reached the scrotum by <strong>6 months of age</strong>, surgical correction is recommended.</p>
+          <h5>Why early surgery matters</h5>
+          <ul><li>An undescended testis sits at body temperature — warmer than the scrotum — which harms sperm-producing cells over time</li><li>Delay increases the risk of infertility and testicular cancer</li><li>Surgery between 9 and 18 months gives the best long-term outcomes</li></ul>
+          <h5>Treatment approach</h5>
+          <p><strong>Orchidopexy</strong> is a day-case procedure under general anaesthesia. For a testis that can be felt in the groin, a small open incision is used. For a testis that is high inside the abdomen (non-palpable), a <strong>laparoscopic approach</strong> is used — sometimes in two stages if the blood vessels are short. The testis is brought down into the scrotum and fixed in place.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div>A retractile testis (one that pops up into the groin when cold) is <em>not</em> the same as undescended — it does not need surgery, only observation.</div></div>`
+      },
+      circumcision: {
+        eyebrow: 'Day-Care Procedures',
+        title: 'Circumcision & Tongue-Tie Release',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.85 2.92 7.21 5 9.88 2.11-2.69 5-7 5-9.88 0-2.76-2.24-5-5-5z"/></svg>',
+        body: `<p>These are two of the most common day-care procedures in paediatric surgery. Both are performed under safe anaesthesia with a focus on comfort, minimal bleeding, and fast recovery.</p>
+          <h5>Circumcision</h5>
+          <p>Indicated for medical reasons such as <strong>phimosis</strong> (tight foreskin that cannot be retracted), recurrent balanoposthitis (infection), paraphimosis, or cultural/religious reasons. The procedure takes 20–30 minutes under general anaesthesia and uses fine absorbable sutures — no painful stitch-removal needed. Healing takes 7–10 days.</p>
+          <h5>Tongue-Tie Release (Frenotomy / Frenuloplasty)</h5>
+          <p>A tight <strong>lingual frenulum</strong> can restrict tongue movement, cause breastfeeding difficulties in babies, or interfere with speech and eating in older children. A simple snip (in young babies) or a more formal Z-plasty (older children) under short anaesthesia restores full tongue mobility.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div>Both procedures are performed as day cases — you’ll go home the same day with clear aftercare instructions.</div></div>`
+      },
+      neonatal: {
+        eyebrow: 'Neonatal Surgery',
+        title: 'Neonatal Congenital Anomalies',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9a2 2 0 012-2h2V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v3h6V7a3 3 0 00-3-3z"/></svg>',
+        body: `<p>Some babies are born with anomalies that need <strong>urgent surgery within the first days of life</strong>. With modern neonatal intensive care and experienced paediatric surgical teams, outcomes are excellent for most conditions.</p>
+          <h5>Conditions we manage</h5>
+          <ul>
+            <li><strong>Tracheo-Oesophageal Fistula (TEF) / Oesophageal Atresia</strong> — an abnormal connection between the food pipe and windpipe</li>
+            <li><strong>Anorectal Malformations (ARM)</strong> — absent or abnormally positioned anal opening</li>
+            <li><strong>Hirschsprung’s Disease</strong> — a segment of colon lacks normal nerve cells, causing severe constipation</li>
+            <li><strong>Congenital Diaphragmatic Hernia (CDH)</strong> — a hole in the diaphragm allowing abdominal organs into the chest</li>
+            <li><strong>Gastroschisis / Omphalocele</strong> — abdominal wall defects with intestines outside the body</li>
+            <li><strong>Intestinal Atresia & Malrotation</strong> — blocked or wrongly-positioned bowel</li>
+          </ul>
+          <h5>Why specialised paediatric care matters</h5>
+          <p>A newborn’s anatomy is millimetre-scale. Anaesthesia, fluid balance, and temperature control are all delicate. These conditions demand <strong>paediatric super-specialty training</strong> that a general surgeon does not have — every step, from first assessment to final suture, is calibrated for a body that is still developing.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div><strong>Antenatal counselling</strong> is available when anomalies are picked up on pregnancy scans — so families know what to expect and can plan delivery at a centre ready to care for the baby.</div></div>`
+      },
+      urology: {
+        eyebrow: 'Paediatric Urology',
+        title: 'Paediatric Urology',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v3H5a2 2 0 00-2 2v10h18V12a2 2 0 00-2-2h-2V7a5 5 0 00-5-5zm-3 8V7a3 3 0 016 0v3H9z"/></svg>',
+        body: `<p>Paediatric urology manages surgical conditions of the kidneys, ureters, bladder and genitalia in children — a field with different disease patterns, growth considerations, and surgical techniques compared with adult urology.</p>
+          <h5>Common procedures</h5>
+          <ul>
+            <li><strong>Pyeloplasty</strong> — reconstruction for PUJ obstruction (a blockage where the kidney meets the ureter), often performed laparoscopically</li>
+            <li><strong>Ureteric Re-implantation</strong> — for vesicoureteric reflux (urine flowing backwards from bladder to kidney), which causes recurrent UTIs</li>
+            <li><strong>Cystoscopy</strong> — a camera examination of the bladder to diagnose and treat valves, stones, or tumours</li>
+            <li><strong>Neurogenic Bladder Management</strong> — for children with spina bifida or spinal cord injury, including clean intermittent catheterisation, augmentation, and Mitrofanoff procedures</li>
+            <li><strong>Hypospadias &amp; Epispadias Repair</strong></li>
+            <li><strong>Orchidopexy</strong> for undescended testis</li>
+          </ul>
+          <h5>Approach</h5>
+          <p>Every plan protects long-term kidney function, future continence, and (where relevant) fertility. Many procedures are done <strong>laparoscopically or cystoscopically</strong>, with emphasis on minimal tissue handling and early return to normal childhood activity.</p>`
+      },
+      hydrocephalus: {
+        eyebrow: 'Neural',
+        title: 'Hydrocephalus & Meningomyelocele',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 00-3.6 2.2A3.5 3.5 0 005 8.5c0 .9.3 1.7.9 2.3A3.5 3.5 0 005 14c0 1.9 1.6 3.5 3.5 3.5.2 0 .4 0 .5-.1V21h2V6a2 2 0 014 0v15h2v-3.6c.1 0 .3.1.5.1A3.5 3.5 0 0020 14c0-1.2-.5-2.3-1.3-3.1.5-.6.8-1.4.8-2.4A3.5 3.5 0 0016 5.2 4 4 0 0012 3z"/></svg>',
+        body: `<p><strong>Hydrocephalus</strong> is a build-up of cerebrospinal fluid inside the brain’s ventricles, causing raised pressure, an enlarging head, and developmental delay if untreated. <strong>Meningomyelocele</strong> is the most severe form of spina bifida — the spinal cord and its coverings protrude through an opening in the back and are often associated with hydrocephalus.</p>
+          <h5>Signs and warning features</h5>
+          <ul>
+            <li>Rapidly enlarging head circumference in an infant</li>
+            <li>Full, bulging soft spot (fontanelle)</li>
+            <li>Irritability, poor feeding, vomiting, downward-gazing eyes (“sunset sign”)</li>
+            <li>A visible swelling or open defect over the lower back at birth (meningomyelocele)</li>
+          </ul>
+          <h5>Treatment approach</h5>
+          <p><strong>Ventriculoperitoneal (V-P) shunt</strong> placement — a fine tube that diverts excess fluid from the brain into the abdomen, where it is safely reabsorbed. For meningomyelocele, surgical closure of the back defect is performed within <strong>48–72 hours of birth</strong> to prevent infection and further spinal cord damage; a shunt is added if hydrocephalus is present.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div>Both conditions are often picked up on <strong>antenatal ultrasound</strong>, allowing delivery to be planned at a centre with paediatric surgical care ready.</div></div>`
+      },
+      appendicitis: {
+        eyebrow: 'Emergency',
+        title: 'Appendicitis & Acute Abdomen',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zm-1 5h2v5h-2zm0 7h2v2h-2z"/></svg>',
+        body: `<p><strong>Appendicitis</strong> is the most common cause of emergency abdominal surgery in children. It is often harder to diagnose in young children because the pain may be poorly localised and symptoms can resemble gastroenteritis — early surgical review is important.</p>
+          <h5>Red-flag signs</h5>
+          <ul>
+            <li>Belly pain that starts around the navel and then shifts to the right lower abdomen</li>
+            <li>Loss of appetite, nausea or vomiting</li>
+            <li>Fever — usually low grade at first, rising if the appendix ruptures</li>
+            <li>Refusal to walk, hopping with a limp, or lying very still</li>
+            <li>Tenderness on pressing over the right lower abdomen</li>
+          </ul>
+          <h5>Other causes of acute abdomen we manage</h5>
+          <ul><li><strong>Intussusception</strong> — telescoping of bowel, common in infants</li><li><strong>Volvulus</strong> — twisting of the intestine, a surgical emergency</li><li>Meckel’s diverticulitis, ovarian torsion, testicular torsion</li></ul>
+          <h5>Treatment approach</h5>
+          <p><strong>Laparoscopic appendicectomy</strong> with three small (5 mm) incisions — minimal pain, faster return to school, and barely visible scars. Typical hospital stay is 1–2 days for uncomplicated cases.</p>`
+      },
+      liver: {
+        eyebrow: 'Abdomen',
+        title: 'Gall Bladder & Liver Disease',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-7.07 17.07A10 10 0 0012 22a10 10 0 007.07-2.93A10 10 0 0022 12a10 10 0 00-2.93-7.07A10 10 0 0012 2zm0 4a6 6 0 016 6 6 6 0 01-6 6 6 6 0 01-6-6 6 6 0 016-6z"/></svg>',
+        body: `<p>Gall bladder and liver surgery in children is increasingly common — often due to haemolytic disorders (like thalassaemia or spherocytosis) that cause gallstones, or to congenital conditions like choledochal cysts.</p>
+          <h5>Conditions we manage</h5>
+          <ul>
+            <li><strong>Gallstones &amp; Cholecystitis</strong> — laparoscopic cholecystectomy</li>
+            <li><strong>Choledochal Cyst</strong> — a congenital dilatation of the bile duct; excision is essential because of cancer risk in later life</li>
+            <li><strong>Liver Cysts &amp; Benign Masses</strong></li>
+            <li><strong>Portal Hypertension</strong> — surgical shunts for selected cases</li>
+          </ul>
+          <h5>Approach</h5>
+          <p>Most gall bladder surgery is done <strong>laparoscopically</strong> — four small incisions, same-day mobility, and typically a 1–2 day hospital stay. For more complex liver or bile duct surgery, an open approach with a multi-disciplinary team is used.</p>`
+      },
+      tumours: {
+        eyebrow: 'Paediatric Oncology',
+        title: 'Paediatric Solid Tumours',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg>',
+        body: `<p>Childhood solid tumours are distinct from adult cancers — different biology, different chemotherapy regimens, and often better outcomes. Surgery plays a central role, usually in combination with chemotherapy (before and/or after surgery) and sometimes radiotherapy.</p>
+          <h5>Tumours we manage</h5>
+          <ul>
+            <li><strong>Wilms’ Tumour</strong> — the most common kidney cancer of childhood</li>
+            <li><strong>Neuroblastoma</strong> — arising from the adrenal gland or sympathetic nerve chain</li>
+            <li><strong>Hepatoblastoma</strong> — the most common primary liver cancer in children</li>
+            <li><strong>Germ-cell &amp; Teratoma</strong> — sacrococcygeal, ovarian, testicular</li>
+            <li><strong>Rhabdomyosarcoma &amp; other soft-tissue tumours</strong></li>
+          </ul>
+          <h5>Our approach</h5>
+          <p>Care is delivered by a <strong>multi-disciplinary team</strong> — paediatric surgeon, paediatric oncologist, radiologist, pathologist, and radiation oncologist — so every decision weighs up cure, function, growth, and quality of life. Wherever possible, we use <strong>organ-preserving surgery</strong> and minimally invasive techniques.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div>Outcomes for most childhood solid tumours are <strong>excellent</strong> with modern protocols. Early referral makes the biggest difference.</div></div>`
+      },
+      fb: {
+        eyebrow: 'Emergency',
+        title: 'Foreign Body in Windpipe / Food Pipe',
+        icon: '<svg viewBox="0 0 24 24"><path d="M20 6h-3V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2z"/></svg>',
+        body: `<p>Toddlers explore the world with their mouths. Swallowed coins, button batteries, magnets, small toys, or pieces of food can lodge in the windpipe (airway) or food pipe (oesophagus) — and some of these, especially <strong>button batteries</strong>, can cause serious injury within hours.</p>
+          <h5>Red-flag signs — seek help immediately</h5>
+          <ul>
+            <li>Sudden choking episode followed by persistent cough, wheeze, or noisy breathing</li>
+            <li>Drooling or inability to swallow saliva</li>
+            <li>Refusing feeds, vomiting, chest pain</li>
+            <li>A child who was seen putting something in the mouth</li>
+          </ul>
+          <h5>Treatment approach</h5>
+          <p><strong>Endoscopic removal</strong> under general anaesthesia — a bronchoscope for the airway or an oesophagoscope for the food pipe. The object is grasped with special forceps and gently removed, without any external incision. Most children go home within 24 hours.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div><strong>Button batteries</strong> must be removed within hours — they burn tissue and can cause fatal injury. Do not wait to see if it passes.</div></div>`
+      },
+      antenatal: {
+        eyebrow: 'Before Birth',
+        title: 'Antenatal Counselling',
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 12h-4v4h-2v-4H7v-2h4V8h2v4h4v2z"/></svg>',
+        body: `<p>Modern ultrasound and foetal MRI pick up many congenital anomalies <strong>before birth</strong>. When this happens, expectant parents understandably have many questions — what does it mean? Will the baby need surgery? When? Where should the delivery happen?</p>
+          <h5>What antenatal counselling covers</h5>
+          <ul>
+            <li>Clear explanation of the diagnosis — in plain language, with diagrams</li>
+            <li>What to expect in the first hours and days of life</li>
+            <li>Whether surgery is likely, when, and what it involves</li>
+            <li>Long-term outlook based on current evidence</li>
+            <li>Where to deliver — a centre with paediatric surgical backup on hand</li>
+            <li>Time for questions, and a chance to meet the surgical team before birth</li>
+          </ul>
+          <h5>Why it matters</h5>
+          <p>An informed family is a calmer family. Planning ahead means the baby can be born in the right setting, with the right team ready — and parents can focus on bonding instead of scrambling for information after birth.</p>
+          <div class="cond-modal-note"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><div>If your anomaly scan has flagged something, ask your obstetrician for a paediatric surgical referral — the earlier the better.</div></div>`
+      }
+    };
+
+    const condModal = document.getElementById('cond-modal');
+    const condModalIcon = document.getElementById('cond-modal-icon');
+    const condModalEyebrow = document.getElementById('cond-modal-eyebrow');
+    const condModalTitle = document.getElementById('cond-modal-title');
+    const condModalBody = document.getElementById('cond-modal-body');
+    let condLastFocus = null;
+
+    function openCondModal(id) {
+      const data = CONDITIONS[id];
+      if (!data) return;
+      condLastFocus = document.activeElement;
+      condModalIcon.innerHTML = data.icon;
+      condModalEyebrow.textContent = data.eyebrow;
+      condModalTitle.textContent = data.title;
+      condModalBody.innerHTML = data.body;
+      condModalBody.scrollTop = 0;
+      condModal.classList.add('open');
+      condModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('cond-open');
+      // focus close button for accessibility
+      const closeBtn = condModal.querySelector('.cond-modal-close');
+      if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+    }
+    function closeCondModal() {
+      if (!condModal.classList.contains('open')) return;
+      condModal.classList.remove('open');
+      condModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('cond-open');
+      if (condLastFocus && typeof condLastFocus.focus === 'function') condLastFocus.focus();
+    }
+    // Wire up card clicks
+    document.querySelectorAll('.cond-card').forEach(card => {
+      card.addEventListener('click', () => openCondModal(card.dataset.cond));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCondModal(card.dataset.cond); }
+      });
+    });
+    // Close handlers
+    condModal.querySelectorAll('[data-cond-close]').forEach(el => {
+      el.addEventListener('click', closeCondModal);
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && condModal.classList.contains('open')) closeCondModal();
     });
 
     /* ─── INIT ────────────────────────────────────────────────── */
