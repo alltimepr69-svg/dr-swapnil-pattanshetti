@@ -2485,6 +2485,145 @@
       .v2-float-badge span { font-size: 0.8rem; }
     }
 
+    /* ───── FACILITIES ACCORDION ──────────────────────────── */
+    #facilities {
+      padding: 80px 5% 64px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg) 100%);
+      position: relative; overflow: hidden;
+    }
+    #facilities::before {
+      content:''; position: absolute;
+      top: 6%; right: -140px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(107,70,193,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #facilities::after {
+      content:''; position: absolute;
+      bottom: 10%; left: -120px;
+      width: 280px; height: 280px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,135,179,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .fac-inner { max-width: 1240px; margin: 0 auto; position: relative; }
+    .fac-head { text-align: center; margin-bottom: 48px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .fac-head .section-sub { margin: 0 auto; }
+
+    .fac-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .fac-card {
+      background: white;
+      border-radius: 20px;
+      border: 1.5px solid rgba(107,70,193,0.10);
+      overflow: hidden;
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .fac-card:hover { box-shadow: 0 10px 32px rgba(107,70,193,0.10); }
+    .fac-card.open { border-color: rgba(107,70,193,0.28); box-shadow: 0 14px 40px rgba(107,70,193,0.14); }
+
+    .fac-card-head {
+      width: 100%; display: flex; align-items: center; gap: 16px;
+      padding: 20px 22px; background: none; border: none;
+      cursor: pointer; text-align: left;
+      transition: background var(--transition);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .fac-card-head:hover { background: rgba(107,70,193,0.03); }
+    .fac-card-icon {
+      width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--transition), transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .fac-card.open .fac-card-icon {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-d) 100%);
+      transform: rotate(-6deg) scale(1.05);
+    }
+    .fac-card-icon svg { width: 24px; height: 24px; fill: var(--navy); transition: fill var(--transition); }
+    .fac-card.open .fac-card-icon svg { fill: white; }
+    .fac-card-meta { flex: 1; min-width: 0; }
+    .fac-card-meta h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem; color: var(--navy);
+      margin-bottom: 3px; line-height: 1.25;
+    }
+    .fac-card-meta p { font-size: 0.82rem; color: var(--text-l); line-height: 1.45; }
+    .fac-card-chevron {
+      width: 30px; height: 30px; flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.35s, background 0.25s;
+    }
+    .fac-card-chevron svg { width: 16px; height: 16px; fill: var(--navy); transition: fill var(--transition); }
+    .fac-card.open .fac-card-chevron { transform: rotate(180deg); background: var(--navy); }
+    .fac-card.open .fac-card-chevron svg { fill: white; }
+
+    /* Grid-row animation for smooth expand */
+    .fac-card-body {
+      display: grid; grid-template-rows: 0fr;
+      transition: grid-template-rows 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fac-card.open .fac-card-body { grid-template-rows: 1fr; }
+    .fac-card-body-inner {
+      overflow: hidden;
+    }
+    .fac-list {
+      list-style: none; padding: 4px 26px 24px 26px; margin: 0;
+    }
+    .fac-list li {
+      position: relative; padding: 10px 0 10px 22px;
+      font-size: 0.9rem; color: var(--text); line-height: 1.65;
+      border-top: 1px dashed rgba(107,70,193,0.12);
+    }
+    .fac-list li:first-child { border-top: 1px dashed rgba(107,70,193,0.12); padding-top: 14px; }
+    .fac-list li::before {
+      content: ''; position: absolute; left: 4px; top: 17px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--gold));
+    }
+    .fac-list li strong { color: var(--navy); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .fac-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      #facilities { padding: 64px 5% 52px; }
+      .fac-head { margin-bottom: 36px; }
+      .fac-card-head { padding: 16px 18px; gap: 12px; }
+      .fac-card-icon { width: 42px; height: 42px; border-radius: 12px; }
+      .fac-card-icon svg { width: 22px; height: 22px; }
+      .fac-card-meta h4 { font-size: 0.98rem; }
+      .fac-card-meta p { font-size: 0.78rem; }
+      .fac-list { padding: 4px 20px 20px 20px; }
+      .fac-list li { font-size: 0.86rem; }
+    }
+
+    /* ───── DUAL CLINIC STACK (appointments page) ──────────── */
+    .dual-clinic-stack { display: flex; flex-direction: column; gap: 20px; }
+    .clinic-badge {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 5px 12px; border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .clinic-badge-primary {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-d) 100%);
+      color: white;
+    }
+    .clinic-badge-secondary {
+      background: linear-gradient(135deg, rgba(246,135,179,0.18) 0%, rgba(213,63,140,0.18) 100%);
+      color: var(--gold-d);
+      border: 1px solid rgba(213,63,140,0.25);
+    }
+    .map-placeholder.map-placeholder-alt {
+      background: linear-gradient(135deg, rgba(246,135,179,0.30) 0%, rgba(233,216,253,0.70) 100%);
+    }
+
   </style>
 </head>
 <body>
@@ -2575,8 +2714,8 @@
               <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11z"/></svg>
             </div>
             <div class="v2-float-text">
-              <div class="v2-float-label">Open Daily</div>
-              <div class="v2-float-val">9 AM &ndash; 5 PM</div>
+              <div class="v2-float-label">Clinic Hours</div>
+              <div class="v2-float-val">Mon&ndash;Fri 1&ndash;7:30 PM</div>
             </div>
           </div>
 
@@ -2935,7 +3074,8 @@
               <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener">Paediatric Child Surgeon Clinic</a></li>
               <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener">Classique Heights, Kolhapur Circle</a></li>
               <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener">Ayodhya Nagar, Belagavi &mdash; 590016</a></li>
-              <li>Every day: 9 AM &ndash; 5 PM</li>
+              <li><strong>Clinic:</strong> Mon&ndash;Fri, 1&ndash;7:30 PM</li>
+              <li><strong>Hospital:</strong> Tue &amp; Thu, 9 AM&ndash;1 PM</li>
             </ul>
           </div>
         </div>
@@ -2958,6 +3098,259 @@
       <h1>Conditions We Treat</h1>
       <p>A comprehensive range of paediatric surgical conditions &mdash; from neonatal anomalies to adolescent urology &mdash; managed with clinical precision and gentle care.</p>
     </div>
+
+    <!-- FACILITIES (AGE 0 – 18 YEARS) -->
+    <section id="facilities">
+      <div class="fac-inner">
+        <div class="fac-head reveal">
+          <div class="section-tag">Facilities &middot; Age 0&ndash;18 Years</div>
+          <h2 class="section-heading">What We Treat &amp; Manage</h2>
+          <p class="section-sub" style="margin:0 auto">A complete scope of paediatric surgical care at both clinic and hospital locations. Tap any card to see the conditions and procedures included.</p>
+        </div>
+
+        <div class="fac-grid">
+          <!-- 1 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.85 2.92 7.21 5 9.88 2.11-2.69 5-7 5-9.88 0-2.76-2.24-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Day-Care Paediatric Surgeries</h4>
+                <p>Routine outpatient procedures &mdash; same-day home.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Circumcision</strong> &mdash; for phimosis, recurrent infections, or medical/religious reasons.</li>
+                <li><strong>Inguinal &amp; Umbilical Hernia</strong> &mdash; laparoscopic or open repair.</li>
+                <li><strong>Hydrocele</strong> &mdash; fluid collection around the testis, corrected through a small groin incision.</li>
+                <li><strong>Undescended Testis</strong> &mdash; orchidopexy, ideal between 9 and 18 months.</li>
+                <li><strong>Hypospadias</strong> &mdash; single-stage urethroplasty, ideal between 6 and 18 months.</li>
+                <li><strong>Tongue-Tie Release</strong> &mdash; frenotomy/frenuloplasty for feeding or speech issues.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 2 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v3H5a2 2 0 00-2 2v10h18V12a2 2 0 00-2-2h-2V7a5 5 0 00-5-5zm-3 8V7a3 3 0 016 0v3H9z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Congenital Renal &amp; Urological Issues</h4>
+                <p>Kidney, ureter and bladder conditions present from birth.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Hydronephrosis</strong> &mdash; swelling of the kidney due to obstructed urine flow; often picked up antenatally. Pyeloplasty corrects the block at the kidney-ureter junction.</li>
+                <li><strong>Posterior Urethral Valve (PUV)</strong> &mdash; obstructive membranes in the male urethra; endoscopic valve ablation.</li>
+                <li><strong>Vesicoureteric Reflux (VUR)</strong> &mdash; urine flowing backwards from bladder to kidney, a common cause of recurrent UTIs; treated with endoscopic injection or ureteric re-implantation.</li>
+                <li><strong>Ectopic Ureter</strong> &mdash; a ureter opening in an abnormal site, often causing continuous wetting.</li>
+                <li><strong>Neurogenic Bladder</strong> &mdash; managed with clean intermittent catheterisation, bladder augmentation, or a Mitrofanoff channel.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 3 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3c-4 0-7 2-7 6v6c0 4 3 6 7 6s7-2 7-6V9c0-4-3-6-7-6zm0 4a3 3 0 013 3v4a3 3 0 01-6 0v-4a3 3 0 013-3z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Thoracic &amp; Mediastinal Conditions</h4>
+                <p>Chest cavity disease managed with minimal-access surgery.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Empyema Thoracis</strong> &mdash; pus collection in the pleural cavity, usually from pneumonia; VATS decortication drains the infection and re-expands the lung.</li>
+                <li><strong>Mediastinal Cysts &amp; Masses</strong> &mdash; including bronchogenic cysts, teratomas, and thymic lesions; evaluated with imaging and excised thoracoscopically or via small incisions.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 4 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 00-3.6 2.2A3.5 3.5 0 005 8.5c0 .9.3 1.7.9 2.3A3.5 3.5 0 005 14c0 1.9 1.6 3.5 3.5 3.5.2 0 .4 0 .5-.1V21h2V6a2 2 0 014 0v15h2v-3.6c.1 0 .3.1.5.1A3.5 3.5 0 0020 14c0-1.2-.5-2.3-1.3-3.1.5-.6.8-1.4.8-2.4A3.5 3.5 0 0016 5.2 4 4 0 0012 3z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Hydrocephalus &amp; Meningocele</h4>
+                <p>Protecting the developing brain and spinal cord.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Hydrocephalus</strong> &mdash; build-up of cerebrospinal fluid causing raised pressure and an enlarging head; ventriculo-peritoneal (V-P) shunt placement diverts fluid safely to the abdomen.</li>
+                <li><strong>Meningocele / Meningomyelocele</strong> &mdash; an open spinal defect at birth; repaired within 48&ndash;72 hours to prevent infection and further neural damage.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 5 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 12h-4v4h-2v-4H7v-2h4V8h2v4h4v2z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Antenatal Counselling &amp; Postnatal Management</h4>
+                <p>Guidance from before birth through the early days of life.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Antenatal anomaly counselling</strong> &mdash; clear explanation of diagnosis picked up on ultrasound or foetal MRI, in plain language and with diagrams.</li>
+                <li><strong>Delivery planning</strong> &mdash; guidance on where to deliver so paediatric surgical backup is ready at birth.</li>
+                <li><strong>Postnatal management</strong> &mdash; immediate assessment and surgical care of the newborn, with the team already prepared.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 6 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9a2 2 0 012-2h2V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v3h6V7a3 3 0 00-3-3z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Congenital Neonatal Anomalies</h4>
+                <p>Urgent surgery for anomalies present at birth.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Oesophageal Atresia</strong> (with or without tracheo-oesophageal fistula) &mdash; an interrupted food pipe, often connected abnormally to the windpipe.</li>
+                <li><strong>Anorectal Malformations</strong> &mdash; absent or abnormally positioned anal opening; staged surgery including colostomy and definitive pull-through.</li>
+                <li><strong>Intestinal Atresia</strong> &mdash; a segment of bowel is missing or blocked; resection and primary anastomosis.</li>
+                <li><strong>Necrotising Enterocolitis (NEC)</strong> &mdash; serious inflammatory bowel disease in preterm babies; medical management, drainage or resection.</li>
+                <li><strong>Congenital Diaphragmatic Hernia</strong> &mdash; a hole in the diaphragm allowing abdominal organs into the chest; thoracoscopic or open repair.</li>
+                <li><strong>Malrotation</strong> &mdash; intestines in an abnormal position; Ladd&rsquo;s procedure prevents life-threatening volvulus.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 7 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zm-1 5h2v5h-2zm0 7h2v2h-2z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Abdominal Pain &amp; GI Emergencies</h4>
+                <p>The most common paediatric surgical admissions.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Acute Abdominal Pain</strong> &mdash; thorough evaluation to identify surgical versus medical causes.</li>
+                <li><strong>Appendicitis</strong> &mdash; laparoscopic appendicectomy with quick return to school.</li>
+                <li><strong>Meckel&rsquo;s Diverticulum</strong> &mdash; a remnant of the embryonic yolk sac that can bleed or obstruct.</li>
+                <li><strong>Intussusception</strong> &mdash; telescoping of bowel, common in infants; hydrostatic or pneumatic reduction, surgery if needed.</li>
+                <li><strong>Chronic Constipation</strong> &mdash; identifying surgical causes and managing long-term.</li>
+                <li><strong>Hirschsprung&rsquo;s Disease</strong> &mdash; missing nerve cells in a segment of colon; pull-through surgery after initial decompression.</li>
+                <li><strong>Intestinal Obstruction</strong> &mdash; from adhesions, bands, or malformations; laparoscopic or open relief.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 8 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Vascular Malformations</h4>
+                <p>Birthmarks and blood-vessel abnormalities.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Infantile Haemangiomas</strong> &mdash; common strawberry birthmarks; medical treatment with propranolol or surgical excision.</li>
+                <li><strong>Lymphangiomas / Lymphatic Malformations</strong> &mdash; cystic swellings, often in the neck; sclerotherapy or excision.</li>
+                <li><strong>Arteriovenous &amp; Venous Malformations</strong> &mdash; mixed vascular lesions managed with imaging-guided sclerotherapy or surgery.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 9 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-3V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Foreign Body Removal</h4>
+                <p>Urgent endoscopic retrieval from airway or food pipe.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Bronchus (airway)</strong> &mdash; bronchoscopic removal of aspirated peanuts, beads, or other objects.</li>
+                <li><strong>Oesophagus (food pipe)</strong> &mdash; oesophagoscopic removal of swallowed coins, magnets, and toys.</li>
+                <li><strong>Button Batteries</strong> &mdash; a true emergency; removed within hours to prevent tissue burns.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 10 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Laparoscopic &amp; Minimal-Access Surgery</h4>
+                <p>Key-hole procedures with tiny scars and faster recovery.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Laparoscopic Appendicectomy</strong> &mdash; three small 5 mm incisions.</li>
+                <li><strong>Diaphragmatic Hernia Repair</strong> &mdash; thoracoscopic or laparoscopic approach.</li>
+                <li><strong>Laparoscopic Cholecystectomy</strong> &mdash; for gall stones and cholecystitis in children.</li>
+                <li><strong>Laparoscopic Pyeloplasty</strong> &mdash; kidney-drainage reconstruction for PUJ obstruction.</li>
+                <li><strong>Laparoscopic Nephrectomy</strong> &mdash; for non-functioning or dysplastic kidneys.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 11 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Paediatric Solid Tumours</h4>
+                <p>Surgery coordinated with paediatric oncology.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Wilms&rsquo; Tumour</strong> &mdash; the most common kidney cancer of childhood; nephrectomy with chemotherapy.</li>
+                <li><strong>Neuroblastoma</strong> &mdash; arising from the adrenal gland or sympathetic nerve chain.</li>
+                <li><strong>Hepatoblastoma</strong> &mdash; primary liver tumour; chemotherapy followed by resection.</li>
+                <li><strong>Teratoma</strong> &mdash; germ-cell tumour, commonly sacrococcygeal or ovarian.</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <!-- 12 -->
+          <div class="fac-card">
+            <button class="fac-card-head" aria-expanded="false" type="button">
+              <div class="fac-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-7.07 17.07A10 10 0 0012 22a10 10 0 007.07-2.93A10 10 0 0022 12a10 10 0 00-2.93-7.07A10 10 0 0012 2zm0 4a6 6 0 016 6 6 6 0 01-6 6 6 6 0 01-6-6 6 6 0 016-6z"/></svg></div>
+              <div class="fac-card-meta">
+                <h4>Hepatobiliary Conditions</h4>
+                <p>Bile duct and liver disease in infants and children.</p>
+              </div>
+              <span class="fac-card-chevron"><svg viewBox="0 0 24 24"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></span>
+            </button>
+            <div class="fac-card-body"><div class="fac-card-body-inner">
+              <ul class="fac-list">
+                <li><strong>Choledochal Cyst</strong> &mdash; a congenital dilatation of the bile duct; complete excision with hepaticojejunostomy to remove later cancer risk.</li>
+                <li><strong>Biliary Atresia</strong> &mdash; progressive obstruction of bile ducts in infancy; the Kasai portoenterostomy must be performed early (ideally before 8 weeks) to preserve liver function.</li>
+              </ul>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="conditions">
       <div class="conditions-inner">
@@ -3148,7 +3541,8 @@
             <ul>
               <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener">Paediatric Child Surgeon Clinic</a></li>
               <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener">Classique Heights, Kolhapur Circle</a></li>
-              <li>Every day: 9 AM &ndash; 5 PM</li>
+              <li><strong>Clinic:</strong> Mon&ndash;Fri, 1&ndash;7:30 PM</li>
+              <li><strong>Hospital:</strong> Tue &amp; Thu, 9 AM&ndash;1 PM</li>
             </ul>
           </div>
         </div>
@@ -3222,45 +3616,91 @@
 
         <!-- CLINIC INFO -->
         <div class="reveal reveal-delay-2">
-          <div class="clinic-info-card">
-            <div class="map-placeholder">
-              <div class="map-pin">
-                <div class="map-pin-icon">
-                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div class="dual-clinic-stack">
+            <!-- LOCATION 1: Children's Surgical Clinic -->
+            <div class="clinic-info-card">
+              <div class="map-placeholder">
+                <div class="map-pin">
+                  <div class="map-pin-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  </div>
+                  <span>Children&rsquo;s Surgical Clinic</span>
                 </div>
-                <span>Paediatric Child Surgeon Clinic</span>
+              </div>
+              <div class="clinic-info-body">
+                <div class="clinic-badge clinic-badge-primary">Primary Clinic</div>
+                <h3>Children&rsquo;s Surgical Clinic</h3>
+                <div class="clinic-tagline">Paediatric Surgery &middot; Paediatric Urology</div>
+
+                <a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener" class="clinic-detail clinic-detail-link">
+                  <div class="clinic-detail-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  </div>
+                  <div>
+                    <div class="clinic-detail-label">Address &middot; Open in Google Maps</div>
+                    <div class="clinic-detail-text">1st Floor, Classique Heights, Kolhapur Circle,<br>Opposite Shiva Hotel, Ayodhya Nagar,<br>Belagavi, Karnataka &mdash; 590010</div>
+                  </div>
+                </a>
+
+                <div class="clinic-hours">
+                  <div class="hours-row">
+                    <span class="hours-day">Monday &ndash; Friday</span>
+                    <span class="hours-time">1:00 PM &ndash; 7:30 PM</span>
+                  </div>
+                  <div class="hours-row">
+                    <span class="hours-day">Saturday &amp; Sunday</span>
+                    <span class="hours-time" style="color:var(--text-l)">By Appointment</span>
+                  </div>
+                  <div style="margin-top:16px">
+                    <span class="hours-badge">Mon&ndash;Fri 1 PM &ndash; 7:30 PM</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="clinic-info-body">
-              <h3>Paediatric Child Surgeon Clinic</h3>
-              <div class="clinic-tagline">Paediatric Surgery &middot; Paediatric Urology &middot; Neonatal Surgery</div>
 
-              <a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener" class="clinic-detail clinic-detail-link">
-                <div class="clinic-detail-icon">
-                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                </div>
-                <div>
-                  <div class="clinic-detail-label">Address &middot; Open in Google Maps</div>
-                  <div class="clinic-detail-text">Classique Heights Building, Kolhapur Circle,<br>opposite Shiva Hotel, Ayodhya Nagar,<br>Sadashiv Nagar, Belagavi, Karnataka &mdash; 590016</div>
-                </div>
-              </a>
-
-              <div class="clinic-hours">
-                <div class="hours-row">
-                  <span class="hours-day">Monday &ndash; Saturday</span>
-                  <span class="hours-time">9:00 AM &ndash; 5:00 PM</span>
-                </div>
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time" style="color:var(--text-l)">By Appointment</span>
-                </div>
-                <div style="margin-top:16px">
-                  <span class="hours-badge">Open Daily 9 AM &ndash; 5 PM</span>
-                </div>
-                <div style="margin-top:14px; padding-top:14px; border-top:1px dashed rgba(107,70,193,0.15); font-size:0.82rem; color:var(--text-l); line-height:1.6;">
-                  <strong style="color:var(--navy);">Languages:</strong> Kannada, Telugu, English, Hindi, Marathi
+            <!-- LOCATION 2: KLE's Hospital -->
+            <div class="clinic-info-card">
+              <div class="map-placeholder map-placeholder-alt">
+                <div class="map-pin">
+                  <div class="map-pin-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  </div>
+                  <span>KLE&rsquo;s Hospital</span>
                 </div>
               </div>
+              <div class="clinic-info-body">
+                <div class="clinic-badge clinic-badge-secondary">Visiting Consultant</div>
+                <h3>KLE&rsquo;s Hospital, Nehru Nagar</h3>
+                <div class="clinic-tagline">Consultant &middot; Paediatric Surgery</div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=KLE+Dr+Prabhakar+Kore+Hospital+Nehru+Nagar+Belagavi" target="_blank" rel="noopener" class="clinic-detail clinic-detail-link">
+                  <div class="clinic-detail-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  </div>
+                  <div>
+                    <div class="clinic-detail-label">Address &middot; Open in Google Maps</div>
+                    <div class="clinic-detail-text">KLE&rsquo;s Dr. Prabhakar Kore Hospital &amp; MRC,<br>Nehru Nagar, Belagavi, Karnataka &mdash; 590010</div>
+                  </div>
+                </a>
+
+                <div class="clinic-hours">
+                  <div class="hours-row">
+                    <span class="hours-day">Tuesday &amp; Thursday</span>
+                    <span class="hours-time">9:00 AM &ndash; 1:00 PM</span>
+                  </div>
+                  <div class="hours-row">
+                    <span class="hours-day">Other Days</span>
+                    <span class="hours-time" style="color:var(--text-l)">At Clinic</span>
+                  </div>
+                  <div style="margin-top:16px">
+                    <span class="hours-badge">Tue &amp; Thu 9 AM &ndash; 1 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 4px; padding: 14px 18px; background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%); border-radius: 14px; font-size:0.82rem; color:var(--text); line-height:1.6;">
+              <strong style="color:var(--navy);">Languages:</strong> Kannada, Telugu, English, Hindi, Marathi
             </div>
           </div>
 
@@ -3315,7 +3755,8 @@
             <ul>
               <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener">Paediatric Child Surgeon Clinic</a></li>
               <li><a href="https://www.google.com/maps?rlz=1C5CHFA_enIN1126IN1127&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgoIBBAuGLEDGIAEMg0IBRAuGIMBGLEDGIAEMgoIBhAAGLEDGIAEMhAIBxAuGMcBGLEDGNEDGIAEMgcICBAuGIAEMhAICRAuGMcBGLEDGNEDGIAE0gEJMjA2MWowajE1qAIIsAIB8QVJbb9SbEtQ_PEFSW2_UmxLUPw&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KV8sFW5PYb87MYPXEso5Icg6&daddr=Classique+Hts+Building,+Kolhapur+Circle,+opposite+to+Shiva+Hotel,+Ayodhya+Nagar,+Sadashiv+Nagar,+Belagavi,+Karnataka+590016" target="_blank" rel="noopener">Classique Heights, Kolhapur Circle</a></li>
-              <li>Every day: 9 AM &ndash; 5 PM</li>
+              <li><strong>Clinic:</strong> Mon&ndash;Fri, 1&ndash;7:30 PM</li>
+              <li><strong>Hospital:</strong> Tue &amp; Thu, 9 AM&ndash;1 PM</li>
             </ul>
           </div>
         </div>
@@ -4253,6 +4694,15 @@
     });
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && condModal.classList.contains('open')) closeCondModal();
+    });
+
+    /* ─── FACILITIES ACCORDION ────────────────────────────── */
+    document.querySelectorAll('.fac-card-head').forEach(head => {
+      head.addEventListener('click', () => {
+        const card = head.closest('.fac-card');
+        const isOpen = card.classList.toggle('open');
+        head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
     });
 
     /* ─── INIT ────────────────────────────────────────────────── */
